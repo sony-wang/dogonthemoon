@@ -34,7 +34,7 @@ return [
 
     // 服务器地址
 
-    'hostname'        => Env::get('database.hostname', '127.0.0.1'),
+    'hostname'        => Env::get('database.hostname', '34.122.138.173'),
 
     // 数据库名
 
@@ -46,7 +46,7 @@ return [
 
     // 密码
 
-    'password'        => Env::get('database.password', ''),
+    'password'        => Env::get('database.password', 'b90498262f0f549f'),
 
     // 端口
 
