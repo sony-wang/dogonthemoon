@@ -1,0 +1,12 @@
+/runtime/*
+/application/admin/command/Install/*.lock
+/public/uploads/*
+/vendor
+.idea
+composer.lock
+*.log
+*.css.map
+!.gitkeep
+.env
+.svn
+.vscode
