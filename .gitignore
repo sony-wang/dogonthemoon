@@ -1,7 +1,7 @@
 /runtime/*
 /application/admin/command/Install/*.lock
 /public/uploads/*
-/vendor
+#/vendor
 .idea
 composer.lock
 *.log
