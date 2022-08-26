@@ -1,0 +1,84 @@
+視覺參考:
+https://www.packtw.org/?lang=zh
+https://www.marysdoggies.org/
+
+前台畫面:
+1.首頁banner視覺圖
+2.認養資訊
+	1.狗狗照片
+	2.名子
+	3.性別
+	4.體型
+	5.個性簡述
+	6.顏色
+	7.照護近況(保留但不顯示)
+	A.我要認養
+		1.認養人姓名-input text
+		2.欲飼養犬隻姓名-input text 自動載入
+		3.家庭現有成員-input text
+		4.居住房型-input text
+		5.是否養過寵物-input radio [是,否]
+		6.現是否有寵物-input radio [是,否]
+		7.提供飼養環境照片-input file
+		8.聯絡電話-input text
+		9.email-input
+3.義工報名
+	1.選擇日期-flatpicker，如果額滿則disable日期，上限6人
+	2.姓名-input text
+	3.電話-input text
+	4.地址-input text
+	5.email-input text
+4.日常
+	Instagram
+	Facebook
+	Youtube
+5.展示公益募款人[每年都會有不同的公益募款字號]
+	呈現:
+		1.捐款時間
+		2.姓名(需藏中間字)
+		3.金額
+	搜尋:姓名搜尋
+
+6.聯絡我們
+	姓名-input text
+	email-input text
+	說明-input text
+
+
+後台功能:
+1.首頁輪播圖上傳
+2.認養資訊
+	1.狗狗照片-img
+	2.名子-input text
+	3.性別-input radio [公,母]
+	4.體型-select option [大型,中型,小型]
+	5.個性簡述-input text
+	6.顏色-input text
+	7.照護近況(保留但不顯示)-input text
+3.我要認養[從前台寫入的]
+		1.認養人姓名
+		2.欲飼養犬隻姓名
+		3.家庭現有成員
+		4.居住房型
+		5.是否養過寵物
+		6.現是否有寵物
+		7.提供飼養環境照片
+		8.聯絡電話
+		9.email
+3.義工報名[從前台寫入的]
+	1.日期
+	2.姓名
+	3.電話
+	4.地址
+	5.email
+
+4.公益募款人
+	1.捐款時間-input text
+	2.姓名-input text
+	3.金額-input text
+
+5.聯絡我們[從前台寫入的]
+	姓名
+	email
+	說明
+
