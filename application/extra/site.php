@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'name' => '月園管理後台',
+    'name' => '月園流浪動物照護協會',
     'beian' => '',
     'cdnurl' => '',
     'version' => '1.0.1',
