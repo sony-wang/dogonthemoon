@@ -7,12 +7,11 @@ curl https://raw.githubusercontent.com/git-ftp/git-ftp/master/git-ftp > /bin/git
 chmod 755 /bin/git-ftp
 
 //推正式機
-git ftp init -u admin@mangotoolweb.com -p '[zUAjeYbXu)%' ftp://ftp.mangotoolweb.com/public_html/
-git ftp push -u admin@mangotoolweb.com -p '[zUAjeYbXu)%' ftp://ftp.mangotoolweb.com/public_html/
+git ftp push -u dogonthemoon -p 'mTxmT3YYymSmPbdz'  ftp://34.122.138.173
 //設定主機
-git config git-ftp.url ftp://ftp.mangotoolweb.com/public_html/
-git config git-ftp.user admin@mangotoolweb.com
-git config git-ftp.password '[zUAjeYbXu)%'
+git config git-ftp.url ftp://34.122.138.173
+git config git-ftp.user dogonthemoon
+git config git-ftp.password 'mTxmT3YYymSmPbdz'
 //設定本機路徑
 git config git-ftp.syncroot C:\xampp\htdocs\
 
