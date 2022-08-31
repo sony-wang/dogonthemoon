@@ -65,6 +65,13 @@ class Api
     protected $responseType = 'json';
 
     protected $site_url = null;
+    
+    //綠界
+    protected $ecpay_HashKey = "5294y06JbISpM5x9";
+    protected $ecpay_HashIV = "v77hoKGq4kWxNNIS";
+    protected $ecpay_MerchantID = "2000132";
+    protected $ecpay_url = "https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5";
+
     /**
      * 构造方法
      * @access public
