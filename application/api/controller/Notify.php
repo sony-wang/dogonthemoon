@@ -39,7 +39,7 @@ class Notify extends Api
             foreach($postData as $k => $v){
                 $signStr .= $k."=".$v."&";
             }
-            $signStr = "HashKey=".$HashKey."&".$signStr."HashIV=".$HashIV;
+            $signStr = "HashKey=".$this->ecpay_HashKey."&".$signStr."HashIV=".$this->ecpay_HashIV;
             $signStr = strtolower(urlencode($signStr));
             $signStr = toDotNetUrlEncode($signStr);
             $CheckMacValue = strtoupper(hash('sha256', $signStr));
@@ -95,5 +95,11 @@ class Notify extends Api
             Log::notice("[".__METHOD__."] 回調失敗");
             return "回調失敗";
         }
+    }
+    
+    public function donateorder_period()
+    {
+        $post = $this->request->post();
+        Log::notice("[".__METHOD__."]".json_encode($post));
     }
 }

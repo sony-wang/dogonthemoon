@@ -19,6 +19,7 @@ class Donate extends Api
     public function donate()
     {
         $donate_type = $this->request->request('donate_type', 1);
+        $exec_times = $this->request->request('exec_times', 2);
         $amount = $this->request->request('amount', 500);
         $phone = $this->request->request('phone', '');
         $donate_name = $this->request->request('donate_name', '');
@@ -41,6 +42,7 @@ class Donate extends Api
             'donate_type' => $donate_type,
             'phone' => $phone,
             'donate_name' => $donate_name,
+            'exec_times' => $exec_times,
             'status' => 0,
         ];
 

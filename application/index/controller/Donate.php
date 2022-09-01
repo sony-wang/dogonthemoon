@@ -65,6 +65,15 @@ class Donate extends Frontend
             'OrderResultURL' => $OrderResultURL,
         ];
         
+        if($mOrder->donate_type == 2){
+            $postData['ChoosePayment'] = 'Credit';
+            $postData['PeriodAmount'] = $TotalAmount;
+            $postData['PeriodType'] = 'M'; //間隔單位 
+            $postData['Frequency'] = 1; //間隔
+            $postData['ExecTimes'] = $mOrder->exec_times; //次數
+            $postData['PeriodReturnURL'] = $this->site_url['api'].'/notify/donateorder_period';
+        }
+
         ksort($postData);
         $signStr = "";
         foreach($postData as $k => $v){
