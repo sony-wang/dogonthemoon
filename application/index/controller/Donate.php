@@ -104,6 +104,13 @@ class Donate extends Frontend
         $szHtml .= '<input name="EncryptType" value="' . $postData['EncryptType'] . '" type="hidden">';
         $szHtml .= '<input name="ClientBackURL" value="' . $postData['ClientBackURL'] . '" type="hidden">';
         $szHtml .= '<input name="OrderResultURL" value="' . $postData['OrderResultURL'] . '" type="hidden">';
+        if($mOrder->donate_type == 2){
+            $szHtml .= '<input name="PeriodAmount" value="' . $postData['PeriodAmount'] . '" type="hidden">';
+            $szHtml .= '<input name="PeriodType" value="' . $postData['PeriodType'] . '" type="hidden">';
+            $szHtml .= '<input name="Frequency" value="' . $postData['Frequency'] . '" type="hidden">';
+            $szHtml .= '<input name="ExecTimes" value="' . $postData['ExecTimes'] . '" type="hidden">';
+            $szHtml .= '<input name="PeriodReturnURL" value="' . $postData['PeriodReturnURL'] . '" type="hidden">';
+        }
         $szHtml .= '<input name="CheckMacValue"  value="' . $CheckMacValue . '" type="hidden">';
         $szHtml .= '</form>';
         $szHtml .= '<script type="text/javascript">';
