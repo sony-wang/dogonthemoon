@@ -70,7 +70,7 @@ class Donate extends Frontend
         foreach($postData as $k => $v){
             $signStr .= $k."=".$v."&";
         }
-        $signStr = "HashKey=".$HashKey."&".$signStr."HashIV=".$HashIV;
+        $signStr = "HashKey=".$this->ecpay_HashKey."&".$signStr."HashIV=".$this->ecpay_HashIV;
         $signStr = strtolower(urlencode($signStr));
         $signStr = toDotNetUrlEncode($signStr);
         $CheckMacValue = strtoupper(hash('sha256', $signStr));
@@ -81,7 +81,7 @@ class Donate extends Frontend
         $szHtml .= '<meta charset="utf-8">';
         $szHtml .= '</head>';
         $szHtml .= '<body>';
-        $szHtml .= '<form name="ebpay" id="ebpay" method="post" action="' . $url . '" style="display:none;">';
+        $szHtml .= '<form name="ebpay" id="ebpay" method="post" action="' . $this->ecpay_url . '" style="display:none;">';
         $szHtml .= '<input name="MerchantID" value="' . $postData['MerchantID'] . '" type="hidden">';
         $szHtml .= '<input name="MerchantTradeNo" value="' . $postData['MerchantTradeNo'] . '"   type="hidden">';
         $szHtml .= '<input name="MerchantTradeDate" value="' . $postData['MerchantTradeDate'] . '"   type="hidden">';
