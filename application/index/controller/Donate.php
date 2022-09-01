@@ -83,6 +83,7 @@ class Donate extends Frontend
         $signStr = strtolower(urlencode($signStr));
         $signStr = toDotNetUrlEncode($signStr);
         $CheckMacValue = strtoupper(hash('sha256', $signStr));
+        Log::notice("[".__METHOD__."] CheckMacValue:".$CheckMacValue);
 
         $szHtml = '<!doctype html>';
         $szHtml .= '<html>';
