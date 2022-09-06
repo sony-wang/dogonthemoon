@@ -42,7 +42,9 @@ class Donate extends Api
             'donate_type' => $donate_type,
             'phone' => $phone,
             'donate_name' => $donate_name,
-            'exec_times' => $exec_times,
+            'ExecTimes' => $exec_times,
+            'Frequency' => 1, //週期間隔
+            'PeriodType' => 'D', //測試時用天
             'status' => 0,
         ];
 
