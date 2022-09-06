@@ -43,9 +43,9 @@ class Donate extends Frontend
             $this->error('查無訂單');
         }
 
-        $TradeDesc = "捐款";
+        $TradeDesc = "捐款項目:".$mOrder->donation_project;
         $TotalAmount = $mOrder->amount;
-        $ItemName = "捐款";
+        $ItemName = "捐款項目:".$mOrder->donation_project;
         $ReturnURL = $this->site_url['api'].'/notify/donateorder';
         $CheckMacValue = "";
         $ClientBackURL = $this->site_url['furl'].'';

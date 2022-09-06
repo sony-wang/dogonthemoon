@@ -36,17 +36,27 @@ class Donate extends Api
         
         $order_no = "DT".date('YmdHis');
 
+        $mWebset = model("Webset")->where("key = 'donation_project'")->find();
+        if($mWebset){
+            $donation_project = $mWebset->val;
+        }else{
+            $donation_project = "尚未設定";
+        }
         $params = [
             'order_no' => $order_no,
             'amount' => $amount,
             'donate_type' => $donate_type,
             'phone' => $phone,
             'donate_name' => $donate_name,
-            'ExecTimes' => $exec_times,
-            'Frequency' => 1, //週期間隔
-            'PeriodType' => 'D', //測試時用天
+            'donation_project' => $donation_project,
             'status' => 0,
         ];
+        
+        if($donate_type == 2){
+            $params['ExecTimes'] = $exec_times;
+            $params['Frequency'] = 1;//週期間隔
+            $params['PeriodType'] = 'D';//測試時用天
+        }
 
         model('Donateorder')::create($params);
 
