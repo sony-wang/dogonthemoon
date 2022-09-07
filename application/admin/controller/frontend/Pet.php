@@ -1,6 +1,6 @@
 <?php
 
-namespace app\admin\controller\user;
+namespace app\admin\controller\frontend;
 
 use app\common\controller\Backend;
 use app\common\library\Auth;
@@ -11,16 +11,17 @@ use think\exception\ValidateException;
 use Exception;
 
 
-class Adopt extends Backend
+class Pet extends Backend
 {
 
     protected $relationSearch = true;
     protected $model = null;
+    protected $selectpageFields = "id,code,name";
 
     public function _initialize()
     {
         parent::_initialize();
-        $this->model = model('Adopt');
+        $this->model = model('Pet');
         // $this->view->assign("statusList", $this->model->getStatusList());
     }
 
@@ -38,12 +39,10 @@ class Adopt extends Backend
             }
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
             $total = $this->model
-            ->with('pet')
                 ->where($where)
                 ->order($sort, $order)
                 ->count();
             $list = $this->model
-            ->with('pet')
                 ->where($where)
                 ->order($sort, $order)
                 ->limit($offset, $limit)

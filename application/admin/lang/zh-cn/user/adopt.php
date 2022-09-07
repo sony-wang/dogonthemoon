@@ -3,8 +3,11 @@
 return [ 
     'pet' => '寵物',
     'pet_id' => '寵物ID',
+    'pet.code' => '寵物代碼',
+    'pet.name' => '寵物名稱',
     'name' => '認養人姓名',
-    'family' => '居住房型',
+    'family' => '家庭成員',
+    'room' => '居住房型',
     'hadpet' => '養過寵物',
     'haspet' => '現有寵物',
     'email' => 'Email',

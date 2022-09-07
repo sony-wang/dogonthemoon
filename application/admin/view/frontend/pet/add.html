@@ -1,9 +1,9 @@
 <form id="add-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
     {:token()}
     <div class="form-group">
-        <label for="pet_id" class="control-label col-xs-12 col-sm-2">{:__('pet')}:</label>
+        <label for="code" class="control-label col-xs-12 col-sm-2">{:__('code')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="pet_id" data-rule="required" data-source="frontend/pet/index" class="form-control selectpage" name="row[pet_id]" type="text" value="" data-params='{"searchField[0]":"id","searchField[1]":"code","searchField[2]":"name"}' data-format-item="[{id}][{code}] {name}">
+            <input id="code" data-rule="required" class="form-control" name="row[code]" type="text" value="">
         </div>
     </div>
     <div class="form-group">
@@ -13,27 +13,21 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="family" class="control-label col-xs-12 col-sm-2">{:__('family')}:</label>
+        <label for="age" class="control-label col-xs-12 col-sm-2">{:__('age')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="family" data-rule="required" class="form-control" name="row[family]" type="text" value="">
+            <input id="age" data-rule="required" class="form-control" name="row[age]" type="text" value="">
         </div>
     </div>
     <div class="form-group">
-        <label for="room" class="control-label col-xs-12 col-sm-2">{:__('room')}:</label>
+        <label for="medical" class="control-label col-xs-12 col-sm-2">{:__('medical')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="room" data-rule="required" class="form-control" name="row[room]" type="text" value="">
+            <input id="medical" data-rule="required" class="form-control" name="row[medical]" type="text" value="">
         </div>
     </div>
     <div class="form-group">
-        <label for="email" class="control-label col-xs-12 col-sm-2">{:__('email')}:</label>
+        <label for="physical" class="control-label col-xs-12 col-sm-2">{:__('physical')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="email" data-rule="required" class="form-control" name="row[email]" type="text" value="">
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="phone" class="control-label col-xs-12 col-sm-2">{:__('phone')}:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="phone" data-rule="required" class="form-control" name="row[phone]" type="text" value="">
+            <input id="physical" data-rule="required" class="form-control" name="row[physical]" type="text" value="">
         </div>
     </div>
     <div class="form-group">
@@ -50,19 +44,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="hadpet" class="control-label col-xs-12 col-sm-2">{:__('hadpet')}:</label>
-        <div class="col-xs-12 col-sm-8">
-            {:build_radios('row[hadpet]', ['1'=> __('yes'), '0'=> __('no')])}
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="haspet" class="control-label col-xs-12 col-sm-2">{:__('haspet')}:</label>
-        <div class="col-xs-12 col-sm-8">
-            {:build_radios('row[haspet]', ['1'=> __('yes'), '0'=> __('no')])}
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="status" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <label for="content" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
         <div class="col-xs-12 col-sm-8">
             {:build_radios('row[status]', ['1'=> __('Status 1'), '0'=> __('Status 0')])}
         </div>

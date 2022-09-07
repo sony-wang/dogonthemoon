@@ -13,6 +13,8 @@ use think\Session;
 use fast\Tree;
 use think\Validate;
 
+use think\Log;
+
 /**
  * 后台控制器基类
  */
@@ -486,6 +488,7 @@ class Backend extends Controller
         $primaryvalue = $this->request->request("keyValue");
         //搜索字段
         $searchfield = (array)$this->request->request("searchField/a");
+        Log::notice($searchfield);
         //自定义搜索条件
         $custom = (array)$this->request->request("custom/a");
         //是否返回树形结构
