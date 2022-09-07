@@ -206,5 +206,7 @@ return [
     'updatetime' => '更新時間', 
     'Status 0' => '停用',
     'Status 1' => '啟用',
+    'yes' => '是',
+    'no' => '否',
     'admin_name' => '管理員名稱'
 ];
