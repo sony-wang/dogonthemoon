@@ -16,9 +16,4 @@ class Webset extends Model
     protected $createTime = 'createtime';
     protected $updateTime = 'updatetime';
 
-    public function getStatusList()
-    {
-        return ['0' => __('Status 0'), '1' => __('Status 1'), '2' => __('Status 2')];
-    }
-
 }

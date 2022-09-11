@@ -1,12 +1,48 @@
 <form id="add-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
     {:token()}
     <div class="form-group">
+        <label for="pet_id" class="control-label col-xs-12 col-sm-2">{:__('pet')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="pet_id" data-rule="required" data-source="frontend/pet/index" class="form-control selectpage" name="row[pet_id]" type="text" value="" data-params='{"searchField[0]":"id","searchField[1]":"code","searchField[2]":"name"}' data-format-item="[{id}][{code}] {name}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="control-label col-xs-12 col-sm-2">{:__('name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="name" data-rule="required" class="form-control" name="row[name]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="family" class="control-label col-xs-12 col-sm-2">{:__('family')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="family" data-rule="required" class="form-control" name="row[family]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="room" class="control-label col-xs-12 col-sm-2">{:__('room')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="room" data-rule="required" class="form-control" name="row[room]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="control-label col-xs-12 col-sm-2">{:__('email')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="email" data-rule="required" class="form-control" name="row[email]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="phone" class="control-label col-xs-12 col-sm-2">{:__('phone')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="phone" data-rule="required" class="form-control" name="row[phone]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('img')}:</label>
         <div class="col-xs-12 col-sm-8">
             <div class="input-group">
-                <input id="img"  class="form-control" size="50" name="row[img]" type="text" value="">
+                <input id="img"  class="form-control" size="50" name="row[img]" type="hidden" value="">
                 <div class="input-group-addon no-border no-padding">
-                    <span><button type="button" class="btn btn-danger faupload" data-rule="" data-input-id="img" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-img"><i class="fa fa-upload"></i> 上傳照片</button></span>
+                    <span><button type="button" class="btn btn-danger faupload" data-rule="" data-input-id="img" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="true" data-preview-id="p-img"><i class="fa fa-upload"></i> 上傳照片</button></span>
                 </div>
                 <span class="msg-box n-right" for="img"></span>
             </div>
@@ -14,13 +50,19 @@
         </div>
     </div>
     <div class="form-group">
-        <label for="c-username" class="control-label col-xs-12 col-sm-2">{:__('Username')}:</label>
+        <label for="hadpet" class="control-label col-xs-12 col-sm-2">{:__('hadpet')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-username" data-rule="required" class="form-control" name="row[username]" type="text" value="">
+            {:build_radios('row[hadpet]', ['1'=> __('yes'), '0'=> __('no')])}
         </div>
     </div>
     <div class="form-group">
-        <label for="content" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <label for="haspet" class="control-label col-xs-12 col-sm-2">{:__('haspet')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[haspet]', ['1'=> __('yes'), '0'=> __('no')])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="status" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
         <div class="col-xs-12 col-sm-8">
             {:build_radios('row[status]', ['1'=> __('Status 1'), '0'=> __('Status 0')])}
         </div>

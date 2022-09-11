@@ -1,6 +1,6 @@
 <?php
 
-namespace app\admin\controller\frontend;
+namespace app\admin\controller\user;
 
 use app\common\controller\Backend;
 use app\common\library\Auth;
@@ -11,17 +11,16 @@ use think\exception\ValidateException;
 use Exception;
 
 
-class Pet extends Backend
+class Volunteer extends Backend
 {
 
     protected $relationSearch = true;
     protected $model = null;
-    protected $selectpageFields = "id,code,name";
 
     public function _initialize()
     {
         parent::_initialize();
-        $this->model = model('Pet');
+        $this->model = model('Volunteer');
         $this->view->assign("statusList", $this->model->getStatusList());
     }
 
@@ -68,6 +67,8 @@ class Pet extends Backend
                 if ($this->dataLimit && $this->dataLimitFieldAutoFill) {
                     $params[$this->dataLimitField] = $this->auth->id;
                 }
+
+
                 $result = false;
                 Db::startTrans();
                 try {
@@ -77,6 +78,9 @@ class Pet extends Backend
                         $validate = is_bool($this->modelValidate) ? ($this->modelSceneValidate ? $name . '.add' : $name) : $this->modelValidate;
                         $this->model->validateFailException(true)->validate($validate);
                     }
+
+                    $params['join_time'] = strtotime($params['join_time']);
+                    $params['birthday'] = strtotime($params['birthday']);
 
                     $result = $this->model->allowField(true)->save($params);
                     Db::commit();
@@ -122,6 +126,9 @@ class Pet extends Backend
                 $result = false;
                 Db::startTrans();
                 try {
+                    
+                    $params['join_time'] = strtotime($params['join_time']);
+                    $params['birthday'] = strtotime($params['birthday']);
 
                     $result = $row->allowField(true)->save($params);
                     Db::commit();
@@ -143,6 +150,8 @@ class Pet extends Backend
             }
             $this->error(__('Parameter %s can not be empty', ''));
         }
+        $row->join_time = date('Y-m-d',$row->join_time);
+        $row->birthday = date('Y-m-d',$row->birthday);
         $this->view->assign("row", $row);
         return $this->view->fetch();
     }

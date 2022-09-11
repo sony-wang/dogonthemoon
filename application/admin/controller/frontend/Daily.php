@@ -11,17 +11,16 @@ use think\exception\ValidateException;
 use Exception;
 
 
-class Pet extends Backend
+class Daily extends Backend
 {
 
     protected $relationSearch = true;
     protected $model = null;
-    protected $selectpageFields = "id,code,name";
 
     public function _initialize()
     {
         parent::_initialize();
-        $this->model = model('Pet');
+        $this->model = model('Daily');
         $this->view->assign("statusList", $this->model->getStatusList());
     }
 
@@ -77,6 +76,7 @@ class Pet extends Backend
                         $validate = is_bool($this->modelValidate) ? ($this->modelSceneValidate ? $name . '.add' : $name) : $this->modelValidate;
                         $this->model->validateFailException(true)->validate($validate);
                     }
+                    $params['daily_time'] = strtotime($params['daily_time']);
 
                     $result = $this->model->allowField(true)->save($params);
                     Db::commit();
@@ -122,6 +122,7 @@ class Pet extends Backend
                 $result = false;
                 Db::startTrans();
                 try {
+                    $params['daily_time'] = strtotime($params['daily_time']);
 
                     $result = $row->allowField(true)->save($params);
                     Db::commit();
@@ -143,6 +144,7 @@ class Pet extends Backend
             }
             $this->error(__('Parameter %s can not be empty', ''));
         }
+        $row->daily_time = date('Y-m-d',$row->daily_time);
         $this->view->assign("row", $row);
         return $this->view->fetch();
     }

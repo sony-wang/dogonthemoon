@@ -21,7 +21,7 @@ class Adopt extends Backend
     {
         parent::_initialize();
         $this->model = model('Adopt');
-        // $this->view->assign("statusList", $this->model->getStatusList());
+        $this->view->assign("statusList", $this->model->getStatusList());
     }
 
     /**

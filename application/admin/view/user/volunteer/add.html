@@ -1,0 +1,52 @@
+<form id="add-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    {:token()}
+    <div class="form-group">
+        <label for="join_time" class="control-label col-xs-12 col-sm-2">{:__('join_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="join_time" data-rule="required" class="form-control datetimepicker" name="row[join_time]" type="text" value="" data-date-format="YYYY-MM-DD">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="control-label col-xs-12 col-sm-2">{:__('name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="name" data-rule="required" class="form-control" name="row[name]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="birthday" class="control-label col-xs-12 col-sm-2">{:__('birthday')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="birthday" data-rule="required" class="form-control" name="row[birthday]" type="text" value="" placeholder="Ex:2000-09-12">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="idnum" class="control-label col-xs-12 col-sm-2">{:__('idnum')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="idnum" data-rule="required" class="form-control" name="row[idnum]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="phone" class="control-label col-xs-12 col-sm-2">{:__('phone')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="phone" data-rule="required" class="form-control" name="row[phone]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="control-label col-xs-12 col-sm-2">{:__('email')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="email" data-rule="required" class="form-control" name="row[email]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="content" class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[status]', ['1'=> __('Status 1'), '0'=> __('Status 0')])}
+        </div>
+    </div>
+    <div class="form-group hidden layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

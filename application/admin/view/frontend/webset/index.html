@@ -1,0 +1,39 @@
+
+<div class="row animated fadeInRight">
+    <div class="col-md-12">
+        <div class="box box-success">
+            <div class="panel-body">
+                <form id="siteconfig-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+                    {:token()}
+                    <div class="box-body">
+                        {foreach $mModel as $v}
+                        <div class="form-group">
+                            <label for="{$v->key}" class="control-label col-xs-12" style="text-align: left;">{$v->title}:</label>
+                            <div class="col-xs-8">
+                                {if $v->type == 1}
+                                <div class="input-group">
+                                    <input id="{$v->key}" class="form-control" size="50" name="row[{$v->key}]" type="hidden" value="{$v->val|htmlentities}">
+                                    <div class="input-group-addon no-border no-padding">
+                                        <span><button type="button" class="btn btn-danger faupload" data-rule="" data-input-id="{$v->key}" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="true" data-preview-id="p-{$v->key}"><i class="fa fa-upload"></i> 上傳照片</button></span>
+                                    </div>
+                                    <span class="msg-box n-right" for="{$v->key}"></span>
+                                </div>
+                                <ul class="row list-inline faupload-preview" id="p-{$v->key}"></ul>
+                                {else/}
+                                <input type="text" class="form-control" id="{$v->key}" name="row[{$v->key}]" data-rule="required" value="{$v->val}"/>
+                                {/if}
+                            </div>
+                        </div>
+                        {/foreach}
+                        <div class="form-group">
+                            <label class="control-label col-xs-12"></label>
+                            <div class="col-xs-8">
+                                <button type="submit" class="btn btn-success">{:__('Submit')}</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

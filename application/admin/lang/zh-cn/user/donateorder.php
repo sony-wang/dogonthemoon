@@ -1,0 +1,28 @@
+<?php 
+
+return [ 
+    'order_no' => '訂單編號',
+    'trans_order_no' => '金流編號',
+    'donate_name' => '捐款人',
+    'phone' => '手機',
+    'amount' => '金額',
+    'donate_type' => '捐款方式',
+    'donate_type 1' => '單筆捐款',
+    'donate_type 2' => '定期捐款',
+    'PeriodType' => '定額週期種類',
+    'Frequency' => '定額頻率',
+    'ExecTimes' => '定額次數',
+    'TotalSuccessTimes' => '定額已成功次數',
+    'RtnMsg' => '回調訊息',
+    'RtnCode' => '回調狀態',
+    'SimulatePaid' => '是否測試',
+    'PaymentDate' => '付款時間',
+    'PaymentType' => '付款方式',
+    'CheckMacValue' => '檢查碼',
+    'result' => '回傳參數',
+    'donation_project' => '捐款項目',
+    'Status' => '狀態',
+    'Status 0' => '等待付款',
+    'Status 1' => '付款完成',
+    'Status 2' => '付款失敗',
+];

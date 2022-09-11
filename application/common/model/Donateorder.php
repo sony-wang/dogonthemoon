@@ -18,7 +18,7 @@ class Donateorder extends Model
 
     public function getStatusList()
     {
-        return ['0' => '等待付款', '1' => '付款完成', '2' => '付款失敗'];
+        return ['0' => __('Status 0'), '1' => __('Status 1'), '2' => __('Status 2')];
     }
 
 }
