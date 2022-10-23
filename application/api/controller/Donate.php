@@ -36,7 +36,7 @@ class Donate extends Api
         
         $order_no = "DT".date('YmdHis');
 
-        $mWebset = model("Webset")->where("key = 'donation_project'")->find();
+        $mWebset = model("Webset")->where("`key` = 'donation_project'")->find();
         if($mWebset){
             $donation_project = $mWebset->val;
         }else{
