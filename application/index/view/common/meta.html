@@ -1,22 +1,30 @@
 <meta charset="utf-8">
-<title>{$title}</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{$title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    {if isset($keywords)}
+    <meta name="keywords" content="{$keywords}">
+    {/if}
+    {if isset($description)}
+    <meta name="description" content="{$description}">
+    {/if}
+<meta property="og:title" content="月園流浪動物照護協會" />
+    <meta property="og:site_name" content="月園流浪動物照護協會官方網站" />
+    <meta property="og:locale" content="zh_TW" />
+    <meta property="og:type" content="{{ $keywords ?? '' }}" />
+    <meta property="og:description" content="{{ $description ?? '' }}" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="{{url('/images/logo.svg')}}">
+    <link rel="shortcut icon" href="__CDN__/assets/img/favicon.ico" />
+    <link href="__CDN__/assets/css/frontend/bootstrap.min.css" rel="stylesheet">
+    <link href="__CDN__/assets/css/frontend/style.css" rel="stylesheet">
+    <link href="__CDN__/assets/css/frontend/swiper-bundle.min.css" rel="stylesheet">
+    <!-- <link href="__CDN__/assets/css/frontend{$Think.config.app_debug?'':'.min'}.css?v={$Think.config.site.version}" rel="stylesheet">
+    <link href="__CDN__/assets/css/all.css?v={$Think.config.site.version}" rel="stylesheet">
 
-{if isset($keywords)}
-<meta name="keywords" content="{$keywords}">
-{/if}
-{if isset($description)}
-<meta name="description" content="{$description}">
-{/if}
-
-<link rel="shortcut icon" href="__CDN__/assets/img/favicon.ico" />
-
-<link href="__CDN__/assets/css/frontend{$Think.config.app_debug?'':'.min'}.css?v={$Think.config.site.version}" rel="stylesheet">
-<link href="__CDN__/assets/css/all.css?v={$Think.config.site.version}" rel="stylesheet">
-
-<script type="text/javascript">
-    var require = {
-        config: {$config|json_encode}
-    };
-</script>
+    <script type="text/javascript">
+        var require = {
+            config: {$config|json_encode}
+        };
+    </script> -->
