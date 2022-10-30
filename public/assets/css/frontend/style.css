@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'GenSenRounded';
+    src: url('../../fonts/custom/GenSenRounded-B.woff') format("woff"),
+           url('../../fonts/custom/GenSenRoundedTW-B-01.ttf') format("truetype"),
+           url('../../fonts/custom/GenSenRoundedTW-B-01.eot') format("embedded-opentype");
+  }
+.genSenRounded{
+    font-family: 'GenSenRounded';
+}
+
+
 body {
     background: 
     url("../../img/frontend/home page-流浪動物照護協會@2x.png") no-repeat 30% 6%,
@@ -28,9 +39,35 @@ body {
 
 .story{
     background: url("../../img/frontend/home/home page-底圖裝飾-mark pen@2x.png") no-repeat;
-    background-size: cover;
+    background-position: 0%;
+    background-size: contain;
     /* height: 10rem; */
 }
+
+.fs-custom-01{
+    font-size: 4rem;
+}
+
+.bd-callout{
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #e9ecef;
+    border-left-width: 0.25rem;
+    border-radius: 0.25rem;
+}
+
+.mission::before{
+    background-image: url("../../img/frontend/home/home page-deco-star-@2x.png");
+    content: '';
+    position: absolute;
+    background-size: cover;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    left: -2.5rem;
+}
+
 
 @media screen and (max-width: 1400px) {}
 @media screen and (max-width: 1200px) {}
