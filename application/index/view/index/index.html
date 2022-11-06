@@ -11,28 +11,12 @@
 
   <body class="genSenRounded">
     <div class="row g-0">
-        <div
-          class="nav h-100 w-100 d-flex flex-column justify-content-between align-items-center py-5 position-fixed ms-5"
-          style="max-width: 13rem"
-        >
-          <img
-            class="w-50"
-            src="__CDN__/assets/img/frontend/home page-月園logo@2x.png"
-            alt="月園logo"
-          />
-          <div>
-            <a class="d-block text-decoration-none text-dark fw-bold" style="letter-spacing: 1.9rem;" href="javascripg:;">首頁</a>
-            <a class="d-block text-decoration-none text-dark fw-bold" style="letter-spacing: 1.9rem;" href="javascripg:;">日常</a>
-            <a class="d-block text-decoration-none text-dark fw-bold" href="javascripg:;">一日義工</a>
-            <a class="d-block text-decoration-none text-dark fw-bold" href="javascripg:;">認養團員</a>
-            <a class="d-block text-decoration-none text-dark fw-bold" style="letter-spacing: 1.9rem;" href="javascripg:;">捐款</a>
-            <a class="d-block text-decoration-none text-dark fw-bold" href="javascripg:;">聯繫方式</a>
-          </div>
-        </div>
+      {include file="common/nav" /}
       <div class="col-md-6 col-12 position-relative">
         
       </div>
       <div class="col-md-6 col-12">
+        <div class="container">
         <div class="position-relative">
           <!-- Swiper -->
           <div class="swiper mySwiper">
@@ -127,14 +111,14 @@
           <div class="d-flex">
             <p class="fs-3">請追蹤我們：</p>
             <img class="w-25"  src="__CDN__/assets/img/frontend/home/home page-follow us-箭頭-@2x.png" alt="">
-            <a href="javascript:;">
+            <a href="javascript:;" style="z-index: 10;">
               <img class="w-50" src="__CDN__/assets/img/frontend/home/home page-icon-facebook@2x.png" alt="">
             </a>
           </div>
         </div>
         <img style="margin-top:-10% ;" class="w-75" src="__CDN__/assets/img/frontend/home/home page-deco-dog-2@2x.png" alt="">
       </div>
-        
+    </div>
       </div>
     </div>
     {include file="common/script" /}
