@@ -9,18 +9,22 @@
 }
 
 
-body {
+body.bg_a {
     background: 
-    url("../../img/frontend/home page-流浪動物照護協會@2x.png") no-repeat 30% 6%,
+    /* url("../../img/frontend/home page-流浪動物照護協會@2x.png") no-repeat 30% 6%, */
     url("../../img/frontend/home page-背景-yellow-moon@2x.png") no-repeat 5% 50%,
     #f8f4d433;
-    background-size: 25%, 43%;
+    /* background-size: 25%, 43%; */
+    background-size: 43%;
     background-attachment: fixed;
+}
+.logo{
+    max-width: 380px;
 }
 .nav{
     background: hsla(0, 0%, 100%, .25);
-    -webkit-backdrop-filter: blur(5px);    
-    backdrop-filter: blur(5px)
+    /* -webkit-backdrop-filter: blur(5px);     */
+    /* backdrop-filter: blur(5px) */
 }
 .nav-m{
     background: hsla(0, 0%, 100%, .25)!important;
@@ -56,7 +60,7 @@ body {
 }
 
 .fs-custom-01{
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .bd-callout{
@@ -77,6 +81,23 @@ body {
     width: 2rem;
     height: 2rem;
     left: -2.5rem;
+}
+
+.bg_daily{
+    background: 
+    url("../../img/frontend/daily/日常頁-裝飾底圖@2x.png") no-repeat 5% 50%,
+    #bdccd440;
+    /* #BDCCD4; */
+    /* background-size: 25%, 43%; */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.color-daily01{
+    color: #00000080;
+}
+.color-daily02{
+    color: #7171B0;
 }
 
 

@@ -10,7 +10,7 @@ class Donate extends Frontend
 
     protected $noNeedLogin = '*';
     protected $noNeedRight = '*';
-    protected $layout = 'base';
+    // protected $layout = 'base';
 
     public function index()
     {
