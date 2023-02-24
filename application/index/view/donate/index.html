@@ -9,54 +9,92 @@
     <![endif]-->
   </head>
 
-  <body class="genSenRounded">
+  <body class="genSenRounded bg_a">
     <div class="row g-0">
-      {include file="common/nav" /}
-      <div class="col-md-6 col-12 position-relative">
-        
+      <div class="col-md-1">
+        {include file="common/nav" /}
+        </div>
+      <div class="col-md-5 col-12 position-relative">
+        <img style="top: 1rem;left: 25%; z-index: 99;" class="logo position-absolute d-none d-md-block" src="__CDN__/assets/img/frontend/home page-流浪動物照護協會@2x.png" alt="">
+        <div class="m-md-5 p-md-5">
+          <div class="d-flex ms-md-5 my-md-4 ">
+            <div class="story d-flex justify-content-start align-items-center">
+              <img style="max-height: 3.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-捐款icon-@2x.png" alt="">
+            </div>
+            <div class="w-100 d-flex align-items-center">
+                <p class="fs-custom-01 mb-0 genSenRounded">捐款</p>
+            </div>
+          </div>
+          <p class="ms-md-5" style="color:#00000080">園區每月需支付龐大照護、醫療、照護員等費用， 感謝有您相伴， 讓我們在動保路上不孤單。</p>
+          <div class="d-md-block d-none">
+            <div class="d-flex justify-content-between ms-md-5 mt-md-4 align-items-center">
+              <p class="fs-custom-02 mb-0 genSenRounded">我要捐款</p>
+              <div class="d-flex align-items-center">
+                <div class="story d-flex justify-content-start align-items-center">
+                  <img style="max-height: 2.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-我要捐款箭頭-right-@2x.png" alt="">
+                </div>
+              </div>
+            </div>
+            <p class="ms-md-5" style="color:#00000080">請填寫右側表單</p>
+          </div>
+        </div>
       </div>
       <div class="col-md-6 col-12">
-        <div class="container">
+        <div class="container p-md-5">
           <form name="form" id="donate-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="{:url('api/donate/donate')}">
             {:token()}
             <div class="form-group">
-                <label for="donate_type" class="control-label col-xs-12 col-sm-2">捐款方式:</label>
-                <div class="col-xs-12 col-sm-8">
-                    {:build_radios('donate_type', $donate_type_list, 1, ['class'=>'form-control', 'data-rule'=>'required'])}
-                </div>
+                <p class="m-0" style="font-size: 1.5rem;">選擇捐款方式
+                  <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
+                </p>
+                  {foreach $donate_type_list as $k => $item}
+                  <input type="radio" class="btn-check " name="donate_type_list" id="donate_type-{$k}" value="{$k}" autocomplete="off">
+                  <label class="btn btn-light rounded-pill text-secondary border-dark" for="donate_type-{$k}">{$item}</label>
+                  {/foreach}
             </div>
-            <div class="form-group">
+            <div class="form-group mt-3" id="exec_times_wrap" style="display:none">
                 <label for="exec_times" class="control-label col-xs-12 col-sm-2">定額次數:</label>
                 <div class="col-xs-12 col-sm-8">
-                    <input type="number" class="form-control" id="exec_times" name="exec_times" value="2" data-rule="" placeholder="" autocomplete="off">
+                    <input type="number" class="form-control rounded-pill text-secondary border-dark" id="exec_times" name="exec_times" value="2" data-rule="" placeholder="" autocomplete="off">
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <label for="donate_amount" class="control-label col-xs-12 col-sm-2">捐款金額:</label>
                 <div class="col-xs-12 col-sm-8">
-                    {:build_select('donate_amount', $donate_amount_list, 0, ['class'=>'form-control', 'data-rule'=>'required'])}
+                    <select class="form-select rounded-pill text-secondary border-dark" id="floatingSelect" aria-label="Floating label select example">
+                      <option selected>選擇金額</option>
+                      {foreach $donate_amount_list as $k => $item}
+                      <option value="{$k}">{$item}</option>
+                      {/foreach}
+                    </select>
+                    <!-- {:build_select('donate_amount', $donate_amount_list, 0, ['class'=>'form-control', 'data-rule'=>'required'])} -->
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="amount_wrap" style="display:none">
                 <label for="amount" class="control-label col-xs-12 col-sm-2"></label>
                 <div class="col-xs-12 col-sm-8">
-                    <input type="number" class="form-control" id="amount" name="amount" value="1000" data-rule="required" placeholder="" autocomplete="off">
+                    <input type="number" class="form-control btn-light rounded-pill text-secondary border-dark" id="amount" name="amount" value="1000" data-rule="required" placeholder="" autocomplete="off">
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <label for="phone" class="control-label col-xs-12 col-sm-2">手機號碼:</label>
                 <div class="col-xs-12 col-sm-8">
-                    <input type="text" class="form-control" id="phone" name="phone" value="" data-rule="required" placeholder="" autocomplete="off">
+                    <input type="text" class="form-control rounded-pill text-secondary border-dark" id="phone" name="phone" value="" data-rule="required" placeholder="" autocomplete="off">
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <label for="donate_name" class="control-label col-xs-12 col-sm-2">捐款人:</label>
                 <div class="col-xs-12 col-sm-8">
-                    <input type="text" class="form-control" id="donate_name" name="donate_name" value="" data-rule="required" placeholder="" autocomplete="off">
+                    <input type="text" class="form-control rounded-pill text-secondary border-dark" id="donate_name" name="donate_name" value="" data-rule="required" placeholder="" autocomplete="off">
                 </div>
             </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-lg btn-block">送出</button>
+            <div class="form-group mt-3">
+              <div class="d-grid gap-2 col-xs-12 col-sm-8">
+                <button type="submit" class="btn rounded-pill text-dark display-1">
+                  快速捐款
+                  <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-捐款紀錄查詢icon@2x.png" alt="">
+                </button>
+              </div>
             </div>
         </form>
         </div>
@@ -64,6 +102,31 @@
     </div>
     {include file="common/script" /}
     <script>
+      const donate_type_list = document.querySelectorAll('input[name="donate_type_list"]');
+      const exec_times_wrap = document.querySelector('#exec_times_wrap');
+      donate_type_list.forEach((element,index) => {
+        element.checked = index === 0 ? true : false;
+        element.addEventListener('change', (e)=>{
+          if(document.querySelector('input[name="donate_type_list"]:checked').value === '2'){
+            exec_times_wrap.style.display = 'block';
+          } else {
+            exec_times_wrap.style.display = 'none';
+          }
+        })
+      });
+
+      const floatingSelect = document.querySelector('#floatingSelect');
+      const amount_wrap = document.querySelector('#amount_wrap');
+      console.log(floatingSelect)
+      floatingSelect.addEventListener('change', (e)=>{
+        console.log(floatingSelect.value)
+        if(floatingSelect.value == '0'){
+          amount_wrap.style.display='block';
+        } else {
+          amount_wrap.style.display='none';
+        }
+      })
+      
     </script>
   </body>
 </html>
