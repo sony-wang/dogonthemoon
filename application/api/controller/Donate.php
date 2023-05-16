@@ -1,7 +1,7 @@
 <?php
 
 namespace app\api\controller;
-
+use think\Log;
 use app\common\controller\Api;
 
 /**
@@ -18,11 +18,21 @@ class Donate extends Api
      */
     public function donate()
     {
+        Log::init(['Donate' => 'File', 'log_name' => 'Donate']);
+        Log::notice('1122333');
         $donate_type = $this->request->request('donate_type', 1);
         $exec_times = $this->request->request('exec_times', 2);
         $amount = $this->request->request('amount', 500);
         $phone = $this->request->request('phone', '');
         $donate_name = $this->request->request('donate_name', '');
+        
+        Log::notice('donate_type:'. $donate_type);
+        Log::notice('exec_times:'. $exec_times);
+        Log::notice('amount:'. $amount);
+        Log::notice('phone:'. $phone);
+        Log::notice('donate_name:'. $donate_name);
+
+        
 
         if($amount <= 0){
             $this->error('[捐款金額]必須大於0');

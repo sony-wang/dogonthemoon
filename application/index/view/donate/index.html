@@ -44,22 +44,26 @@
           <form name="form" id="donate-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="{:url('api/donate/donate')}">
             {:token()}
             <div class="form-group">
-                <p class="m-0" style="font-size: 1.5rem;">選擇捐款方式
+                <h4 class="m-0">選擇捐款方式
                   <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
-                </p>
+                </h4>
                   {foreach $donate_type_list as $k => $item}
                   <input type="radio" class="btn-check " name="donate_type_list" id="donate_type-{$k}" value="{$k}" autocomplete="off">
                   <label class="btn btn-light rounded-pill text-secondary border-dark" for="donate_type-{$k}">{$item}</label>
                   {/foreach}
             </div>
             <div class="form-group mt-3" id="exec_times_wrap" style="display:none">
-                <label for="exec_times" class="control-label col-xs-12 col-sm-2">定額次數:</label>
+                <h4 for="exec_times" class="control-label">定額次數
+                  <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
+                </h4>
                 <div class="col-xs-12 col-sm-8">
                     <input type="number" class="form-control rounded-pill text-secondary border-dark" id="exec_times" name="exec_times" value="2" data-rule="" placeholder="" autocomplete="off">
                 </div>
             </div>
             <div class="form-group mt-3">
-                <label for="donate_amount" class="control-label col-xs-12 col-sm-2">捐款金額:</label>
+                <h4 for="donate_amount" class="control-label">選擇捐款金額或自訂金額
+                  <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
+                </h4>
                 <div class="col-xs-12 col-sm-8">
                     <select class="form-select rounded-pill text-secondary border-dark" id="floatingSelect" aria-label="Floating label select example">
                       <option selected>選擇金額</option>
@@ -77,22 +81,42 @@
                 </div>
             </div>
             <div class="form-group mt-3">
-                <label for="phone" class="control-label col-xs-12 col-sm-2">手機號碼:</label>
+                <h4>填寫捐款基本資料
+                  <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
+                </h4>
+                <p class="h6 text-secondary">若有捐款相關問題，我們可以儘速與您聯繫。</p>
+            </div>
+            <div class="form-group mt-3 row">
+                <label for="donate_name" class="control-label col-xs-12 col-sm-2">您的姓名:</label>
                 <div class="col-xs-12 col-sm-8">
-                    <input type="text" class="form-control rounded-pill text-secondary border-dark" id="phone" name="phone" value="" data-rule="required" placeholder="" autocomplete="off">
+                    <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="donate_name" name="donate_name" value="" data-rule="required" placeholder="" autocomplete="off">
+                </div>
+            </div>
+            <div class="form-group mt-3 row">
+                <label for="phone" class="control-label col-xs-12 col-sm-2">聯絡手機:</label>
+                <div class="col-xs-12 col-sm-8">
+                    <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="phone" name="phone" value="" data-rule="required" placeholder="" autocomplete="off">
+                </div>
+            </div>
+            <div class="form-group mt-3 row">
+                <label for="address" class="control-label col-xs-12 col-sm-2">郵寄地址:</label>
+                <div class="col-xs-12 col-sm-8">
+                    <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="address" name="address" value="" data-rule="required" placeholder="" autocomplete="off">
                 </div>
             </div>
             <div class="form-group mt-3">
-                <label for="donate_name" class="control-label col-xs-12 col-sm-2">捐款人:</label>
-                <div class="col-xs-12 col-sm-8">
-                    <input type="text" class="form-control rounded-pill text-secondary border-dark" id="donate_name" name="donate_name" value="" data-rule="required" placeholder="" autocomplete="off">
-                </div>
+              <div class="d-flex justify-content-end col-xs-12 col-sm-10">
+                <input type="checkbox" class="form-check-input mx-2" id="invoice" name="invoice" value="" >
+                <label for="invoice" class="control-label text-secondary">寄發紙本抵稅收據</label>
+              </div>
             </div>
-            <div class="form-group mt-3">
-              <div class="d-grid gap-2 col-xs-12 col-sm-8">
-                <button type="submit" class="btn rounded-pill text-dark display-1">
-                  快速捐款
-                  <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-捐款紀錄查詢icon@2x.png" alt="">
+            
+            <div class="form-group mt-5">
+              <div class="d-flex justify-content-end col-xs-12 col-sm-10">
+                <button type="submit" class="btn text-dark display-1">
+                  <h2>快速捐款  
+                    <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-捐款紀錄查詢icon@2x.png" alt="">
+                  </h2>
                 </button>
               </div>
             </div>
