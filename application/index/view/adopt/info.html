@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {include file="common/meta" /}
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.staticfile.org/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="genSenRounded bg_c">
+    <div class="row g-0">
+      <div class="col-md-1">
+        {include file="common/nav" /}
+        </div>
+      <div class="col-md-5 col-12 position-relative adopt_left_bg">
+        <img style="top: 1rem;left: 25%; z-index: 99;" class="logo position-absolute d-none d-md-block" src="__CDN__/assets/img/frontend/home page-流浪動物照護協會@2x.png" alt="">
+        <div class="m-md-5 p-md-5 contact_left">
+          <div class="d-flex ms-md-5 mt-md-4 ">
+            <p class="fs-2 mb-0 genSenRounded">認養者資訊填寫</p>
+            <img style="max-height: 2.5rem; width: auto;" src="__CDN__/assets/img/frontend/adopt/認養頁面-認養者資訊填寫-向右箭頭@2x.png" alt="">
+          </div>
+          <p class="ms-md-5" style="color:#00000080">
+            請填寫右側表單
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 col-12">
+        <div class="container p-md-5">
+          <div class="row">
+            <div class="col-md-2 col-12">
+              <h2>1.</h2>
+              <h2>旺來</h2>
+            </div>
+            <div class="col-md-10 col-12 d-flex justify-content-end">
+              <img class="w-50 rounded-5" src="https://images.dog.ceo/breeds/spaniel-blenheim/n02086646_309.jpg" class="card-img-top" alt="...">
+            </div>
+          </div>
+          <div class="pet_content">
+            <div class="form-group mt-3 row">
+              <label for="aa" class="control-label col-xs-12 col-sm-3">認養人姓名 ：</label>
+              <div class="col-xs-12 col-sm-9">
+                  <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="aa" name="name" value="" data-rule="required" placeholder="" autocomplete="off">
+              </div>
+              <label for="bb" class="control-label col-xs-12 col-sm-3">家庭現有成員：</label>
+              <div class="col-xs-12 col-sm-9">
+                  <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="bb" name="name" value="" data-rule="required" placeholder="" autocomplete="off">
+              </div>
+              <label for="cc" class="control-label col-xs-12 col-sm-3">居住房型：</label>
+              <div class="col-xs-12 col-sm-9">
+                  <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="cc" name="name" value="" data-rule="required" placeholder="" autocomplete="off">
+              </div>
+              <label for="cc" class="control-label col-xs-12 col-sm-3">是否養過寵物：</label>
+              <div class="col-xs-12 col-sm-9">
+                  <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="cc" name="name" value="" data-rule="required" placeholder="" autocomplete="off">
+              </div>
+              <label for="cc" class="control-label col-xs-12 col-sm-3">Email:</label>
+              <div class="col-xs-12 col-sm-9">
+                  <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="cc" name="name" value="" data-rule="required" placeholder="" autocomplete="off">
+              </div>
+              <label for="cc" class="control-label col-xs-12 col-sm-3">聯絡電話：</label>
+              <div class="col-xs-12 col-sm-9">
+                  <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="cc" name="name" value="" data-rule="required" placeholder="" autocomplete="off">
+              </div>
+              <label for="cc" class="control-label col-xs-12 col-sm-3">提供飼養環境照片：</label>
+              <div class="col-xs-12 col-sm-9">
+                  <input type="file" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="cc" name="name" value="" data-rule="required" placeholder="" autocomplete="off">
+              </div>
+          </div>
+            <div class="submit_wrap">
+              <div class="mt-2 d-flex justify-content-end">
+                <!-- <img style="max-height: 12rem;" src="__CDN__/assets/img/frontend/contact/聯絡頁-指示小狗@2x.png" alt=""> -->
+                <!-- <div class="d-flex justify-content-end col-xs-12 col-sm-10"> -->
+                  <button type="submit" class="btn text-dark display-1"  onclick="location.href='done'">
+                    <h2>確認認養!</h2>
+                  </button>
+                <!-- </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {include file="common/script" /}
+  </body>
+</html>

@@ -18,6 +18,18 @@ body.bg_a {
     background-size: 43%;
     background-attachment: fixed;
 }
+body.bg_b {
+    background: 
+    /* url("../../img/frontend/home page-流浪動物照護協會@2x.png") no-repeat 30% 6%, */
+    url("../../img/frontend/home page-背景-yellow-moon@2x.png") no-repeat 125% -800%,
+    #f8f4d433;
+    /* background-size: 25%, 43%; */
+    background-size: 43%;
+    background-attachment: fixed;
+}
+body.bg_c {
+    background: #f8f4d433;
+}
 .logo{
     max-width: 380px;
 }
@@ -103,6 +115,14 @@ body.bg_a {
     color: #7171B0;
 }
 
+.contact_left img{
+    width: 100%;
+}
+
+.adopt_left_bg{
+    background: url("../../img/frontend/adopt/認養頁面-底圖裝飾-小月亮群@2x.png");
+    background-size: contain;
+}
 
 @media screen and (max-width: 1400px) {}
 @media screen and (max-width: 1200px) {}
