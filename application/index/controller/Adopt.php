@@ -14,11 +14,25 @@ class Adopt extends Frontend
 
     public function index()
     {
+        $mPet = model("Pet")->where("status = 1")->select();
+        if($mPet){
+            foreach($mPet as $v){
+                $imglist = explode(",", $v->img);
+                $v->imgbase = $imglist[0];
+            }
+        }
+        $this->view->assign('mPet', $mPet);
         return $this->view->fetch();
     }
 
-    public function selected()
+    public function selected($id = 0)
     {
+        $mPet = model("Pet")->where("status = 1 AND id = ".$id)->find();
+        if($mPet){
+            $imglist = explode(",", $mPet->img);
+            $mPet->imgbase = $imglist[0];
+        }
+        $this->view->assign('mPet', $mPet);
         return $this->view->fetch();
     }
     public function info()

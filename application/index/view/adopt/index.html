@@ -32,38 +32,20 @@
         <div class="container p-md-5">
           <div class="container p-md-5">
             <div class="row">
-
-              <div class="col-md-6 col-12">
-                <div class="card my-1">
-                  <a class="text-decoration-none" href="adopt/selected">
-                    <img src="https://images.dog.ceo/breeds/spaniel-blenheim/n02086646_309.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text text-dark">旺來</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-6 col-12">
-                <div class="card my-1">
-                  <a class="text-decoration-none" href="adopt/selected">
-                  <img src="https://images.dog.ceo/breeds/spaniel-blenheim/n02086646_309.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text text-dark">武松</p>
-                  </div>
-                </a>
-                </div>
-              </div>
-              <div class="col-md-6 col-12">
-                <div class="card my-1">
-                  <a class="text-decoration-none" href="adopt/selected">
-                  <img src="https://images.dog.ceo/breeds/spaniel-blenheim/n02086646_309.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <p class="card-text text-dark">香蕉</p>
-                  </div>
-                </a>
-                </div>
-              </div>
-              
+                {if $mPet}
+                    {foreach $mPet as $v}
+                        <div class="col-md-6 col-12">
+                        <div class="card my-1">
+                            <a class="text-decoration-none" href="adopt/selected/id/{$v->id}">
+                            <img src="{$v->imgbase}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-text text-dark">{$v->name}</p>
+                            </div>
+                            </a>
+                        </div>
+                        </div>
+                    {/foreach}
+                {/if}
             </div>
           </div>
         </div>

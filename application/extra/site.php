@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'name' => '月園流浪動物照護協會',
+    'name' => '月園管理後台',
     'beian' => '',
     'cdnurl' => '',
-    'version' => '1.0.3',
+    'version' => '1.0.4',
     'timezone' => 'Asia/Shanghai',
     'forbiddenip' => '',
     'languages' => [
@@ -33,8 +33,8 @@ return [
     'mail_verify_type' => '2',
     'mail_from' => '10000@gmail.com',
     'url' => [
-        'furl' => 'https://http://xp.dogonthemoon.com',
-        'burl' => 'https://xp.dogonthemoon.com/NmVGobFish.php',
-        'api' => 'https:/xp.dogonthemoon.com/api',
+        'furl' => 'https://dogonthemoon.org',
+        'burl' => 'https://dogonthemoon.org/NmVGobFish.php',
+        'api' => 'https://dogonthemoon.org/api',
     ],
 ];
