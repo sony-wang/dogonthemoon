@@ -141,6 +141,7 @@
 
       const floatingSelect = document.querySelector('#floatingSelect');
       const amount_wrap = document.querySelector('#amount_wrap');
+      const amount = document.querySelector('#amount');
       console.log(floatingSelect)
       floatingSelect.addEventListener('change', (e)=>{
         console.log(floatingSelect.value)
@@ -148,6 +149,7 @@
           amount_wrap.style.display='block';
         } else {
           amount_wrap.style.display='none';
+          amount.value = floatingSelect.value; //選擇自訂以外的數值則直接填上
         }
       })
       
