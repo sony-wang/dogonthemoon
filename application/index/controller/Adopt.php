@@ -14,7 +14,7 @@ class Adopt extends Frontend
 
     public function index()
     {
-        $mPet = model("Pet")->where("status = 1")->select();
+        $mPet = model("Pet")->where("status = 0")->select(); //0=未領養
         if($mPet){
             foreach($mPet as $v){
                 $imglist = explode(",", $v->img);
