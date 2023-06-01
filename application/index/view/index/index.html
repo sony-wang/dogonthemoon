@@ -128,20 +128,18 @@
     <script>
       // 輪播圖
       const bannerLists = [
-        "FM-home page photo-.jpg",
-        "FM-home page photo--2.jpg",
-        "FM-home page photo--3.jpg",
-        "FM-home page photo--4.jpg",
-        "FM-home page photo--5.jpg",
-        "FM-home page photo--6.jpg",
-        "FM-home page photo--7.jpg",
+        {if $bannerList}
+        {foreach $bannerList as $banner}
+        "{$banner}",
+        {/foreach}
+        {/if}
       ];
       let bannerListDOM = '';
       const swiperWrapper = document.querySelector(".swiper-wrapper");
       bannerLists.forEach((bannerList, index) => {
         bannerListDOM += `
             <div class="swiper-slide">
-                <img src="__CDN__/assets/img/frontend/home/banner/${bannerLists[index]}"/>
+                <img src="__CDN__${bannerLists[index]}"/>
             </div>
             `;
       });

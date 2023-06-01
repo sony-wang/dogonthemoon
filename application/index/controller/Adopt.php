@@ -31,6 +31,14 @@ class Adopt extends Frontend
         if($mPet){
             $imglist = explode(",", $mPet->img);
             $mPet->imgbase = $imglist[0];
+            if($mPet->sex == 0){
+                $mPet->sex_str = "母";
+            }elseif($mPet->sex == 1){
+                $mPet->sex_str = "公";
+            }else{
+                $mPet->sex_str = "未知";
+            }
+            $mPet->ligation_str = $mPet->ligation == 1? "Y":"N";
         }
         $this->view->assign('mPet', $mPet);
         return $this->view->fetch();
