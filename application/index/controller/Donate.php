@@ -121,4 +121,9 @@ class Donate extends Frontend
 
         return $szHtml;
     }
+
+    public function orders()
+    {
+        return $this->view->fetch();
+    }
 }

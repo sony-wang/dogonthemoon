@@ -124,6 +124,13 @@ body.bg_c {
     background-size: contain;
 }
 
+.order_wrap{
+    background: url("../../img/frontend/donate/捐款頁-紀錄查詢-deco-小狗.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+}
+
 @media screen and (max-width: 1400px) {}
 @media screen and (max-width: 1200px) {}
 @media screen and (max-width: 992px) {}
