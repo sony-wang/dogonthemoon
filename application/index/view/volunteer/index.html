@@ -43,7 +43,7 @@
             role="form"
             data-toggle="validator"
             method="POST"
-            action=""
+            action="{:url('api/volunteer/add')}"
             >
             <!-- action="{:url('volunteer/add')}" -->
             {:token()}
@@ -158,7 +158,7 @@
             </div>
             <div class="form-group mt-2">
               <div class="d-flex justify-content-end col-xs-12 col-sm-10">
-                <button id="sub_btn" type="button" class="btn text-dark display-1" disabled>
+                <button id="sub_btn" type="submit" class="btn text-dark display-1" disabled>
                   <h2>
                     填寫完畢確認送出
                     <img
@@ -177,23 +177,23 @@
     {include file="common/script" /}
   </body>
   <script>
-    const sub_btn = document.querySelector('#sub_btn')
-    sub_btn.addEventListener('click', ()=>{
-      const form = document.querySelector('form')
-      console.log(form)
-      const bodyFormData = new FormData(form)
-      console.log(bodyFormData)
-      console.log(bodyFormData.entries())
-      for (let pair of bodyFormData.entries()) {
-          console.log(pair);
-      }
+    // const sub_btn = document.querySelector('#sub_btn')
+    // sub_btn.addEventListener('click', ()=>{
+    //   const form = document.querySelector('form')
+    //   console.log(form)
+    //   const bodyFormData = new FormData(form)
+    //   console.log(bodyFormData)
+    //   console.log(bodyFormData.entries())
+    //   for (let pair of bodyFormData.entries()) {
+    //       console.log(pair);
+    //   }
 
-      axios.post('volunteer/add',{
-        data: bodyFormData,
-        headers: { "Content-Type": "multipart/form-data" },
-      })
-      .then( (response) => console.log(response))
-      .catch( (error) => console.log(error))
-    })
+    //   axios.post('volunteer/add',{
+    //     data: bodyFormData,
+    //     headers: { "Content-Type": "multipart/form-data" },
+    //   })
+    //   .then( (response) => console.log(response))
+    //   .catch( (error) => console.log(error))
+    // })
   </script>
 </html>

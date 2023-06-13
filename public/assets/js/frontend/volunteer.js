@@ -8,6 +8,8 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
     };
     var Controller = {
         index: function () {
+            Form.api.bindevent($("#volunteer-form"));
+
             const thisYear = new Date().getFullYear();
             flatpickr("#join_time", {
                 // enableTime: true,
