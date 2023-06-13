@@ -11,83 +11,189 @@
 
   <body class="genSenRounded bg_a">
     <div class="row g-0">
-      <div class="col-md-1">
-        {include file="common/nav" /}
-        </div>
+      <div class="col-md-1">{include file="common/nav" /}</div>
       <div class="col-md-5 col-12 position-relative">
-        <img style="top: 1rem;left: 25%; z-index: 99;" class="logo position-absolute d-none d-md-block" src="__CDN__/assets/img/frontend/home page-流浪動物照護協會@2x.png" alt="">
+        <img
+          style="top: 1rem; left: 25%; z-index: 99"
+          class="logo position-absolute d-none d-md-block"
+          src="__CDN__/assets/img/frontend/home page-流浪動物照護協會@2x.png"
+          alt=""
+        />
         <div class="m-md-5 p-md-5">
-          <div class="d-flex ms-md-5 my-md-4 ">
-              <p class="fs-2 mb-0 genSenRounded">體驗一日義工</p>
-            </div>
-          <p class="ms-md-5" style="color:#00000080">
+          <div class="d-flex ms-md-5 my-md-4">
+            <p class="fs-2 mb-0 genSenRounded">體驗一日義工</p>
+          </div>
+          <p class="ms-md-5" style="color: #00000080">
             『體驗一日狗園打掃義工常見Q&A』
           </p>
-          <p class="ms-md-5" style="color:#00000080">
+          <p class="ms-md-5" style="color: #00000080">
             還在懷疑人生，休假沒地方去沒事情做嗎？俗話說助狗為快樂之本～快點跟三五好友相約起來做有愛心和熱血的事情吧！
           </p>
-          <p class="ms-md-5" style="color:#00000080">
+          <p class="ms-md-5" style="color: #00000080">
             預防重於治療！做好環境清潔是園區每天基本卻不能馬虎的工作，乾淨的環境可抑制病媒蚊蟲滋生，讓毛孩們健康成長減少生病的機會！每日開放一組報名，每組上限最多六人！於線上填寫表單，即可幫您報名預約！
           </p>
         </div>
       </div>
       <div class="col-md-6 col-12">
         <div class="container p-md-5">
-          <form name="form" id="donate-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="{:url('api/donate/donate')}">
+          <form
+            name="form"
+            id="volunteer-form"
+            class="form-horizontal"
+            role="form"
+            data-toggle="validator"
+            method="POST"
+            action=""
+            >
+            <!-- action="{:url('volunteer/add')}" -->
             {:token()}
             <div class="form-group mt-3 row">
-              <label for="donate_name" class="control-label col-xs-12 col-sm-2">日期:</label>
+              <label
+                for="join_time"
+                class="control-label col-xs-12 col-sm-2"
+                >日期:</label
+              >
               <div class="col-xs-12 col-sm-8">
-                  <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="donate_name" name="donate_name" value="" data-rule="required" placeholder="" autocomplete="off">
+                <input
+                  type="text"
+                  class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0"
+                  id="join_time"
+                  name="join_time"
+                  value=""
+                  data-rule="required"
+                  placeholder=""
+                  autocomplete="off"
+                />
               </div>
-          </div>
-          <div class="form-group mt-3 row">
-              <label for="phone" class="control-label col-xs-12 col-sm-2">您的姓名:</label>
+            </div>
+            <div class="form-group mt-3 row">
+              <label for="name" class="control-label col-xs-12 col-sm-2"
+                >您的姓名:</label
+              >
               <div class="col-xs-12 col-sm-8">
-                  <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="name" name="name" value="" data-rule="required" placeholder="" autocomplete="off">
+                <input
+                  type="text"
+                  class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0"
+                  id="name"
+                  name="name"
+                  value=""
+                  data-rule="required"
+                  placeholder=""
+                  autocomplete="off"
+                />
               </div>
-          </div>
-          <div class="form-group mt-3 row">
-              <label for="address" class="control-label col-xs-12 col-sm-2">參與人數:</label>
+            </div>
+            <div class="form-group mt-3 row">
+              <label for="number_of_people" class="control-label col-xs-12 col-sm-2"
+                >參與人數:</label
+              >
               <div class="col-xs-12 col-sm-8">
-                  <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="number_of_people" name="number_of_people" value="" data-rule="required" placeholder="" autocomplete="off">
+                <input
+                  type="text"
+                  class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0"
+                  id="number_of_people"
+                  name="number_of_people"
+                  value=""
+                  data-rule="required"
+                  placeholder=""
+                  autocomplete="off"
+                />
               </div>
-          </div>
-          <div class="form-group mt-3 row">
-              <label for="address" class="control-label col-xs-12 col-sm-2">聯繫手機:</label>
+            </div>
+            <div class="form-group mt-3 row">
+              <label for="phone" class="control-label col-xs-12 col-sm-2"
+                >聯繫手機:</label
+              >
               <div class="col-xs-12 col-sm-8">
-                  <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="phone" name="phone" value="" data-rule="required" placeholder="" autocomplete="off">
+                <input
+                  type="text"
+                  class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0"
+                  id="phone"
+                  name="phone"
+                  value=""
+                  data-rule="required"
+                  placeholder=""
+                  autocomplete="off"
+                />
               </div>
-          </div>
-          <div class="form-group mt-3 row">
-              <label for="address" class="control-label col-xs-12 col-sm-2">Email:</label>
+            </div>
+            <div class="form-group mt-3 row">
+              <label for="email" class="control-label col-xs-12 col-sm-2"
+                >Email:</label
+              >
               <div class="col-xs-12 col-sm-8">
-                  <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="email" name="email" value="" data-rule="required" placeholder="" autocomplete="off">
+                <input
+                  type="text"
+                  class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0"
+                  id="email"
+                  name="email"
+                  value=""
+                  data-rule="required"
+                  placeholder=""
+                  autocomplete="off"
+                />
               </div>
-          </div>
-            
+            </div>
+
             <div class="form-group mt-3">
               <div class="d-flex justify-content-end col-xs-12 col-sm-10">
-                <input type="checkbox" class="form-check-input mx-2" id="agree" name="agree" value="" >
-                <label for="agree" class="control-label text-secondary">我已詳細閱讀一日義工需知事項， 並且實際遵守園區規定。</label>
+                <input
+                  type="checkbox"
+                  class="form-check-input mx-2"
+                  id="agree"
+                  name="agree"
+                  value=""
+                />
+                <label for="agree" class="control-label text-secondary"
+                  >我已詳細閱讀一日義工需知事項， 並且實際遵守園區規定。</label
+                >
               </div>
             </div>
             <div class="mt-2 d-flex justify-content-end">
-              <img style="max-height: 8rem;" src="__CDN__/assets/img/frontend/volunteer/義工頁-deco-小狗圖@2x.png" alt="">
+              <img
+                style="max-height: 8rem"
+                src="__CDN__/assets/img/frontend/volunteer/義工頁-deco-小狗圖@2x.png"
+                alt=""
+              />
             </div>
             <div class="form-group mt-2">
               <div class="d-flex justify-content-end col-xs-12 col-sm-10">
-                <button type="submit" class="btn text-dark display-1">
-                  <h2>填寫完畢確認送出  
-                    <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/volunteer/義工頁-填寫完成箭頭-right-@2x.png" alt="">
+                <button id="sub_btn" type="button" class="btn text-dark display-1" disabled>
+                  <h2>
+                    填寫完畢確認送出
+                    <img
+                      style="max-height: 1.5rem"
+                      src="__CDN__/assets/img/frontend/volunteer/義工頁-填寫完成箭頭-right-@2x.png"
+                      alt=""
+                    />
                   </h2>
                 </button>
               </div>
             </div>
-        </form>
+          </form>
         </div>
       </div>
     </div>
     {include file="common/script" /}
   </body>
+  <script>
+    const sub_btn = document.querySelector('#sub_btn')
+    sub_btn.addEventListener('click', ()=>{
+      const form = document.querySelector('form')
+      console.log(form)
+      const bodyFormData = new FormData(form)
+      console.log(bodyFormData)
+      console.log(bodyFormData.entries())
+      for (let pair of bodyFormData.entries()) {
+          console.log(pair);
+      }
+
+      axios.post('volunteer/add',{
+        data: bodyFormData,
+        headers: { "Content-Type": "multipart/form-data" },
+      })
+      .then( (response) => console.log(response))
+      .catch( (error) => console.log(error))
+    })
+  </script>
 </html>
