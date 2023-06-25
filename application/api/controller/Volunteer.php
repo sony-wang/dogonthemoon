@@ -12,8 +12,14 @@ class Volunteer extends Api
     public function add()
     {
         // Log::init(['Donate' => 'File', 'log_name' => 'Donate']);
-        // Log::notice('1122333');
-        // $donate_type = $this->request->request('donate_type', 1);
+        Log::notice('1122333');
+        $join_time = $this->request->request('join_time');
+        $name = $this->request->request('name');
+        $number_of_people = $this->request->request('number_of_people');
+        $phone = $this->request->request('phone');
+        $email = $this->request->request('email');
+
+        $this->success('訂單產生, 前往結帳');
         // $exec_times = $this->request->request('exec_times', 2);
         // $amount = $this->request->request('amount', 500);
         // $phone = $this->request->request('phone', '');

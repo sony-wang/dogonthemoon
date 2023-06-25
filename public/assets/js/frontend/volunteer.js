@@ -23,7 +23,7 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
             });
 
             const agree = document.querySelector('#agree');
-            const submit = document.querySelector('#sub_btn');
+            const submit = document.querySelector('#submit');
             console.log(agree.checked)
             agree.addEventListener('change', ()=>{
                 if(agree.checked){
@@ -31,7 +31,6 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                 }else{
                     submit.disabled = true
                 }
-                console.log('112233')
             })
         },
     };
