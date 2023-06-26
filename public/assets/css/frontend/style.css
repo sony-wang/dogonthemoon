@@ -135,6 +135,16 @@ body.bg_c {
     border-color:transparent;
 }
 
+.toast-success {
+    background: #f3d663;
+    opacity: 1!important;
+    color: #ffffff!important;
+}
+.toast-error {
+    background: #f36363;
+    opacity: 1!important;
+    color: #ffffff!important;
+}
 @media screen and (max-width: 1400px) {}
 @media screen and (max-width: 1200px) {}
 @media screen and (max-width: 992px) {}
