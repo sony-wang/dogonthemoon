@@ -27,7 +27,9 @@ class Adopt extends Frontend
 
     public function selected($id = 0)
     {
-        $mPet = model("Pet")->where("status = 1 AND id = ".$id)->find();
+        $mPetAll = model("Pet")->where("status = 0")->select();
+        $mPet = model("Pet")->where("status = 0 AND id = ".$id)->find();
+        Log::record('112233');
         if($mPet){
             $imglist = explode(",", $mPet->img);
             $mPet->imgbase = $imglist[0];
@@ -41,6 +43,7 @@ class Adopt extends Frontend
             $mPet->ligation_str = $mPet->ligation == 1? "Y":"N";
         }
         $this->view->assign('mPet', $mPet);
+        $this->view->assign('mPetAll', $mPetAll);
         return $this->view->fetch();
     }
     public function info()

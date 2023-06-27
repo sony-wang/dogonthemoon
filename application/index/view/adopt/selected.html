@@ -21,8 +21,9 @@
             <p class="fs-2 mb-0 genSenRounded">月園狗團圓</p>
           </div>
           <ol class="ms-md-5" style="color:#00000080">
-            <li>旺來</li>
-            <li>武松</li>
+            {foreach $mPetAll as $v}
+            <li><a class="text-decoration-none text-dark" href="{$v->id}">{$v->name}</a></li>
+            {/foreach}
           </ol>
         </div>
       </div>
