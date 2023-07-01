@@ -29,7 +29,6 @@ class Adopt extends Frontend
     {
         $mPetAll = model("Pet")->where("status = 0")->select();
         $mPet = model("Pet")->where("status = 0 AND id = ".$id)->find();
-        Log::record('112233');
         if($mPet){
             $imglist = explode(",", $mPet->img);
             $mPet->imgbase = $imglist[0];
@@ -48,6 +47,18 @@ class Adopt extends Frontend
     }
     public function info()
     {
+        $actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        $id = explode('id/', $actual_link)[1];
+
+        // Log::record($id); 
+        $mPet = model("Pet")->where("status = 0 AND id = ".$id)->find();
+        // Log::record(parse_url($actual_link));
+        Log::record($mPet);
+
+        $this->view->assign('id', $mPet->id);
+        $this->view->assign('name', $mPet->name);
+        $this->view->assign('img', $mPet->img);
+        
         return $this->view->fetch();
     }
     public function done()
