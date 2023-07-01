@@ -53,7 +53,7 @@ class Adopt extends Frontend
         // Log::record($id); 
         $mPet = model("Pet")->where("status = 0 AND id = ".$id)->find();
         // Log::record(parse_url($actual_link));
-        Log::record($mPet);
+        // Log::record($mPet);
 
         $this->view->assign('id', $mPet->id);
         $this->view->assign('name', $mPet->name);
