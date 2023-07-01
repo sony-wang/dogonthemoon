@@ -28,7 +28,7 @@
           <div class="d-flex justify-content-end my-3">
             <p class="fs-2">歡迎FB私訊</p>
             <img class="mx-3" style="width:5rem" src="__CDN__/assets/img/frontend/home/home page-follow us-箭頭-@2x.png" alt="">
-            <a href="javascript:;">
+            <a href="https://www.facebook.com/fullmoonstrayanimalsanctuary" target="_blank">
               <img style="max-width:3rem;max-height:3rem" src="__CDN__/assets/img/frontend/contact/聯絡頁-facebook icon@2x.png" alt="">
             </a>
           </div>
@@ -37,30 +37,30 @@
       </div>
       <div class="col-md-6 col-12">
         <div class="container p-md-5">
-          <form name="form" id="donate-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="{:url('api/donate/donate')}">
+          <form name="form" id="donate-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="{:url('api/contact/add')}">
             {:token()}
           <div class="form-group mt-3 row">
-              <label for="phone" class="control-label col-xs-12 col-sm-2">您的姓名:</label>
+              <label for="name" class="control-label col-xs-12 col-sm-2">您的姓名:</label>
               <div class="col-xs-12 col-sm-8">
                   <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="name" name="name" value="" data-rule="required" placeholder="" autocomplete="off">
               </div>
           </div>
           <div class="form-group mt-3 row">
-              <label for="address" class="control-label col-xs-12 col-sm-2">EMAIL:</label>
+              <label for="email" class="control-label col-xs-12 col-sm-2">EMAIL:</label>
               <div class="col-xs-12 col-sm-8">
-                  <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="number_of_people" name="number_of_people" value="" data-rule="required" placeholder="" autocomplete="off">
+                  <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="email" name="email" value="" data-rule="required" placeholder="" autocomplete="off">
               </div>
           </div>
           <div class="form-group mt-3 row">
-              <label for="address" class="control-label col-xs-12 col-sm-2">聯繫電話:</label>
+              <label for="phone" class="control-label col-xs-12 col-sm-2">聯繫電話:</label>
               <div class="col-xs-12 col-sm-8">
                   <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="phone" name="phone" value="" data-rule="required" placeholder="" autocomplete="off">
               </div>
           </div>
           <div class="form-group mt-3 row">
-              <label for="address" class="control-label col-xs-12 col-sm-2">留言訊息:</label>
+              <label for="content" class="control-label col-xs-12 col-sm-2">留言訊息:</label>
               <div class="col-xs-12 col-sm-12 mt-3">
-                  <textarea class="form-control text-secondary bg-white border border-3 rounded-4" id="email" name="email" value="" data-rule="required" placeholder="" autocomplete="off" rows="6"></textarea>
+                  <textarea class="form-control text-secondary bg-white border border-3 rounded-4" id="content" name="content" value="" data-rule="required" placeholder="" autocomplete="off" rows="6"></textarea>
               </div>
           </div>
             
