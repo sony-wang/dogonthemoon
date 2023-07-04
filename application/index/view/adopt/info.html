@@ -49,7 +49,7 @@
           </div>
           <div class="pet_content">
             <form
-              id="volunteer-form"
+              id="adopt-form"
               class="form-horizontal"
               role="form"
               data-toggle="validator"
@@ -152,16 +152,9 @@
                   >提供飼養環境照片：</label
                 >
                 <div class="col-xs-12 col-sm-9">
-                  <input
-                    type="file"
-                    class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0"
-                    id="img"
-                    name="img"
-                    value=""
-                    data-rule="required"
-                    placeholder=""
-                    autocomplete="off"
-                  />
+                    <button type="button" class="btn faupload" data-input-id="img" data-maxsize="1m" data-mimetype="image/jpeg,image/png,image/jpg" data-multiple="true" data-preview-id="p-img">選擇圖片</button>
+                    <input id="img" name="img" type="text" value="" data-rule="required">
+                    <ul class="row list-inline faupload-preview" id="p-img"></ul>
                 </div>
               </div>
               <div class="submit_wrap">
