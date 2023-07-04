@@ -47,10 +47,10 @@ class Frontend extends Controller
     protected $site_url = null;
     
     //綠界
-    protected $ecpay_HashKey = "5294y06JbISpM5x9";
-    protected $ecpay_HashIV = "v77hoKGq4kWxNNIS";
-    protected $ecpay_MerchantID = "2000132";
-    protected $ecpay_url = "https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5";
+    protected $ecpay_HashKey = "ERcwcVvEyXeJkf7f";
+    protected $ecpay_HashIV = "fxM3InIIhO1ENs8a";
+    protected $ecpay_MerchantID = "3346260";
+    protected $ecpay_url = "https://payment.ecpay.com.tw/Cashier/AioCheckOut/V5";
 
     public function _initialize()
     {
