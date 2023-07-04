@@ -32,7 +32,7 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                 <tr>
                     <th scope="row">${finalTime}</th>
                     <td>${e.donate_name}</td>
-                    <td>${e.amount}元${e.createtime}</td>
+                    <td>${e.amount}元</td>
                     <td>衛服救字第${e.donation_project}</td>
                 </tr>
                 `
