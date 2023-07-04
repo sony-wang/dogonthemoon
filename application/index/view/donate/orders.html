@@ -11,40 +11,116 @@
 
   <body class="genSenRounded bg_a">
     <div class="row g-0">
-      <div class="col-md-1">
-        {include file="common/nav" /}
-        </div>
+      <div class="col-md-1">{include file="common/nav" /}</div>
       <div class="col-md-5 col-12 position-relative">
-        <img style="top: 1rem;left: 25%; z-index: 99;" class="logo position-absolute d-none d-md-block" src="__CDN__/assets/img/frontend/home page-流浪動物照護協會@2x.png" alt="">
+        <img
+          style="top: 1rem; left: 25%; z-index: 99"
+          class="logo position-absolute d-none d-md-block"
+          src="__CDN__/assets/img/frontend/home page-流浪動物照護協會@2x.png"
+          alt=""
+        />
         <div class="m-md-5 p-md-5">
-          <div class="d-flex ms-md-5 my-md-4 ">
+          <div class="d-flex ms-md-5 my-md-4">
             <div class="story d-flex justify-content-start align-items-center">
-              <img style="max-height: 3.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-捐款icon-@2x.png" alt="">
+              <img
+                style="max-height: 3.5rem"
+                src="__CDN__/assets/img/frontend/donate/捐款頁-捐款icon-@2x.png"
+                alt=""
+              />
             </div>
             <div class="w-100 d-flex align-items-center">
-                <p class="fs-custom-01 mb-0 genSenRounded">捐款</p>
+              <p class="fs-custom-01 mb-0 genSenRounded">捐款</p>
             </div>
           </div>
           <div class="d-md-block d-none">
-            <div class="d-flex justify-content-between ms-md-5 mt-md-4 align-items-center">
-              <p class="fs-custom-02 mb-0 genSenRounded">捐款紀錄查詢<img style="max-height: 2.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt=""></p>
-            </div>
-            <div class="form-group mt-3 row">
-              <label for="address" class="control-label col-xs-12 col-sm-2"><img style="max-height: 2rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-放大鏡@2x.png" alt=""></label>
-              <div class="col-xs-12 col-sm-8">
-                  <input type="text" class="form-control text-dark border-dark bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="username" name="username" value="" data-rule="required" placeholder="" autocomplete="off">
+            <form
+              id="orders-form"
+              class="form-horizontal"
+              role="form"
+              data-toggle="validator"
+              method="POST"
+              action="{:url('api/Orders/add')}"
+            >
+              {:token()}
+              <div
+                class="d-flex justify-content-between ms-md-5 mt-md-4 align-items-center"
+              >
+                <p class="fs-custom-02 mb-0 genSenRounded">
+                  捐款紀錄查詢<img
+                    style="max-height: 2.5rem"
+                    src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png"
+                    alt=""
+                  />
+                </p>
               </div>
-          </div>
-            
+
+              <div class="form-group mt-3">
+                <h4 class="m-0">
+                  選擇查詢方式
+                  <img
+                    style="max-height: 1.5rem"
+                    src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png"
+                    alt=""
+                  />
+                </h4>
+                {foreach $DonetSerchCate as $k => $item}
+                <input
+                  type="radio"
+                  class="btn-check"
+                  name="donetSerchCate"
+                  id="donetSerchCate_{$k}"
+                  value="{$k}"
+                  autocomplete="off"
+                />
+                <label
+                  class="btn btn-light rounded-pill text-secondary border-dark m-1"
+                  for="donetSerchCate_{$k}"
+                  >{$item}</label
+                >
+                {/foreach}
+              </div>
+
+              <div class="form-group mt-3 row">
+                <label for="address" class="control-label col-xs-12 col-sm-2"
+                  ><img
+                    style="max-height: 2rem"
+                    src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-放大鏡@2x.png"
+                    alt=""
+                /></label>
+                <div class="col-xs-12 col-sm-8">
+                  <input
+                    type="text"
+                    class="form-control text-dark border-dark bg-transparent border-start-0 border-end-0 border-top-0 rounded-0"
+                    id="username"
+                    name="username"
+                    value=""
+                    data-rule="required"
+                    placeholder=""
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <div class="submit_wrap">
+                <div class="mt-2 d-flex justify-content-end">
+                  <button type="submit" class="btn text-dark display-1">
+                    <h2>送出查詢</h2>
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
       <div class="col-md-6 col-12">
-        <div class="container p-md-5 ">
+        <div class="container p-md-5">
           <h2>捐款名錄</h2>
           <div class="d-flex justify-content-start">
-            <p class="m-0 px-2 py-1 ">勸募專案</p>
-            <p class="m-0 px-2 py-1 border border-3 border-dark rounded-pill text-secondary">衛服救字第1111362371</p>
+            <p class="m-0 px-2 py-1">勸募專案</p>
+            <p
+              class="m-0 px-2 py-1 border border-3 border-dark rounded-pill text-secondary"
+            >
+              衛服救字第1111362371
+            </p>
           </div>
 
           <table class="table">
@@ -56,31 +132,61 @@
                 <th scope="col">項目</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="orderList">
+              
+            </tbody>
+            <!-- <tbody>
               <tr>
                 <th scope="row">2022-09-30 10:15:53</th>
                 <td>王○明</td>
                 <td>1,200元</td>
                 <td>衛服救字第1111362371</td>
               </tr>
-            </tbody>
+            </tbody> -->
           </table>
           <div class="d-flex justify-content-center">
-            <div style="max-width: 15rem;" class="d-flex flex-column">
-              <img class="w-100" src="__CDN__/assets/img/frontend/donate/捐款頁-捐款紀錄查詢-deco-小狗@2x.png" alt="">
-              <img class="w-100" src="__CDN__/assets/img/frontend/donate/捐款頁-月園+台中市logo-@2x.png" alt="">
-              <img class="w-100" src="__CDN__/assets/img/frontend/donate/捐款頁-統ㄧ編號 88430770  衛部救字第1111362371號@2x.png" alt="">
-              <img class="w-100" src="__CDN__/assets/img/frontend/donate/捐款頁-Copyright © 2021–2022 FMSAS@2x.png" alt="">
+            <div style="max-width: 15rem" class="d-flex flex-column">
+              <img
+                class="w-100"
+                src="__CDN__/assets/img/frontend/donate/捐款頁-捐款紀錄查詢-deco-小狗@2x.png"
+                alt=""
+              />
+              <img
+                class="w-100"
+                src="__CDN__/assets/img/frontend/donate/捐款頁-月園+台中市logo-@2x.png"
+                alt=""
+              />
+              <img
+                class="w-100"
+                src="__CDN__/assets/img/frontend/donate/捐款頁-統ㄧ編號 88430770  衛部救字第1111362371號@2x.png"
+                alt=""
+              />
+              <img
+                class="w-100"
+                src="__CDN__/assets/img/frontend/donate/捐款頁-Copyright © 2021–2022 FMSAS@2x.png"
+                alt=""
+              />
             </div>
           </div>
-
         </div>
       </div>
     </div>
     {include file="common/script" /}
     <script>
-      
-      
+      const donetSerchCate = document.querySelectorAll(
+        'input[name="donetSerchCate"]'
+      );
+      const donetUsername = document.querySelector(
+        'input[name="username"]'
+      );
+      donetSerchCate.forEach((element, index) => {
+        element.checked = index === 0 ? true : false;
+        if(element.checked)donetUsername.placeholder = `請輸入${element.labels[0].innerHTML}`
+        
+        element.addEventListener("change", (e) => {
+          donetUsername.placeholder = `請輸入${e.target.labels[0].innerHTML}`
+        });
+      });
     </script>
   </body>
 </html>

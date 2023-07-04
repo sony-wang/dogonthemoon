@@ -124,6 +124,15 @@ class Donate extends Frontend
 
     public function orders()
     {
+
+        $DonetSerchCate = [
+            '1' => __('DonetSerchCate 1'), 
+            '2' => __('DonetSerchCate 2'),
+            '3' => __('DonetSerchCate 3'),
+            '4' => __('DonetSerchCate 4')
+        ];
+        $this->view->assign('DonetSerchCate', $DonetSerchCate);
+
         return $this->view->fetch();
     }
 }

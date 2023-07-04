@@ -142,5 +142,10 @@ return [
     'buy_web' => '建立站台',
     'buy_point' => '儲值點數',
     'Status 0' => '停用',
-    'Status 1' => '啟用'
+    'Status 1' => '啟用',
+    'DonetSerchCate 1' => '姓名',
+    'DonetSerchCate 2' => '電話',
+    'DonetSerchCate 3' => '轉帳後5碼',
+    'DonetSerchCate 4' => '信用卡後4碼',
+
 ];
