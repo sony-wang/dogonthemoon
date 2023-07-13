@@ -13,26 +13,26 @@ class Orders extends Api
     {
         $donetSerchCate = $this->request->request('donetSerchCate');
         $username = $this->request->request('username');
-
+        $phone = $this->request->request('phone');
+        $beforeSix = date(strtotime('-6 month'));
+        $where['createtime'] = ['>', $beforeSix];
+        $where['status'] = ['=', '1'];
         switch($donetSerchCate) {
             case '1':
                 //姓名
-                Log::record('112233');
-                Log::record($donetSerchCate);
-                Log::record($username);
-                $mOrder = model("Orders")->where("donate_name = '" . $username."'")->select();
+                $mOrder = model("Orders")->where("donate_name = '" . $username."'")->where($where)->select();
                 break;
             case '2':
                 //電話
-                $mOrder = model("Orders")->where("phone = '" . $username."'")->select();
+                $mOrder = model("Orders")->where("phone = '" . $phone."'")->where($where)->select();
                 break;
             case '3':
                 //轉帳後5碼
-                $mOrder = model("Orders")->where("phone = '" . $username."'")->select();
+                $mOrder = model("Orders")->where("phone = '" . $username."'")->where($where)->select();
                 break;
             case '4':
                 //信用卡後4碼
-                $mOrder = model("Orders")->where("phone = '" . $username."'")->select();
+                $mOrder = model("Orders")->where("phone = '" . $username."'")->where($where)->select();
                 break;
         }
 

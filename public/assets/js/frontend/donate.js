@@ -13,12 +13,11 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
             });
         },
         orders: function () {
-            let dom = ''
             Form.api.bindevent($("#orders-form"), function (mthis, data, ret) {
-                console.log('11223344')
-                console.log(mthis)
-                console.log(data)
-                console.log(ret)
+                let dom = ''
+                // console.log(mthis)
+                // console.log(data)
+                // console.log(ret)
             mthis.forEach(e => {
                 console.log(e)
 

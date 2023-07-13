@@ -125,12 +125,20 @@ class Donate extends Frontend
     public function orders()
     {
 
+        $mWebset = model('Webset')->where("`key` = 'donation_project' ")->find();
+        if($mWebset){
+            $donation_project = explode(",", $mWebset->val);
+        }
+        Log::record($mWebset);
+        Log::record($donation_project[0]);
+
         $DonetSerchCate = [
             '1' => __('DonetSerchCate 1'), 
             '2' => __('DonetSerchCate 2'),
             '3' => __('DonetSerchCate 3'),
             '4' => __('DonetSerchCate 4')
         ];
+        $this->view->assign('donation_project', $donation_project[0]);
         $this->view->assign('DonetSerchCate', $DonetSerchCate);
 
         return $this->view->fetch();
