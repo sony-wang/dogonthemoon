@@ -102,7 +102,8 @@
               </div>
               <div class="submit_wrap">
                 <div class="mt-2 d-flex justify-content-end">
-                  <button type="submit" class="btn text-dark display-1">
+                  <button type="submit" class="btn text-dark display-1 d-flex justify-content-end" id="submit">
+                    <span class="spinner-border spinner-border d-none" role="status" aria-hidden="true"></span>
                     <h2>送出查詢</h2>
                   </button>
                 </div>
@@ -112,7 +113,14 @@
         </div>
       </div>
       <div class="col-md-6 col-12">
-        <div class="container p-md-5">
+        <div class="container p-md-5 noDonateList">
+          <img
+            class="w-75"
+            src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-deco-小狗.png"
+            alt=""
+          />
+        </div>
+        <div class="container p-md-5 donateList" style="display: none;">
           <h2>捐款名錄</h2>
           <div class="d-flex justify-content-start">
             <p class="m-0 px-2 py-1">勸募專案</p>
@@ -179,6 +187,13 @@
           donetUsername.placeholder = `請輸入${e.target.labels[0].innerHTML}`
         });
       });
+
+
+      //送出的Loading
+      // const submit = document.querySelector('#submit');
+      // submit.addEventListener('click',()=>{
+      //   submit.children[0].classList.remove('d-none')
+      // })
     </script>
   </body>
 </html>

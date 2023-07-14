@@ -13,14 +13,23 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
             });
         },
         orders: function () {
+            const submit = document.querySelector('#submit');
+            submit.addEventListener('click',()=>{
+                if(donetUsername.value.length >0){
+                    submit.children[0].classList.remove('d-none')
+                }
+            })
+
+      
             Form.api.bindevent($("#orders-form"), function (mthis, data, ret) {
+                const submit = document.querySelector('#submit');
+                // console.log(submit.children)
+                submit.children[0].classList.add('d-none')
                 let dom = ''
                 // console.log(mthis)
                 // console.log(data)
                 // console.log(ret)
             mthis.forEach(e => {
-                console.log(e)
-
                 //時間戳轉換
                 //2022-09-30 10:15:53
                 let timestamp = e.createtime*1000
@@ -37,9 +46,16 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                 `
             });
             const orderList = document.querySelector('#orderList');
-            console.log(orderList)
+            const noDonateList = document.querySelector('.noDonateList');
+            const donateList = document.querySelector('.donateList');
             orderList.innerHTML = dom;
-                // location.href = Config.url.furl+'/index/donate/orderpage/number/'+data.data;
+            if(orderList.children.length == 0){
+                noDonateList.style.display = 'block';
+                donateList.style.display = 'none';
+            }else{
+                noDonateList.style.display = 'none';
+                donateList.style.display = 'block';
+            }
             });
             
         }

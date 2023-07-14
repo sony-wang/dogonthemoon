@@ -13,7 +13,6 @@ class Orders extends Api
     {
         $donetSerchCate = $this->request->request('donetSerchCate');
         $username = $this->request->request('username');
-        $phone = $this->request->request('phone');
         $beforeSix = date(strtotime('-6 month'));
         $where['createtime'] = ['>', $beforeSix];
         $where['status'] = ['=', '1'];
@@ -24,7 +23,7 @@ class Orders extends Api
                 break;
             case '2':
                 //電話
-                $mOrder = model("Orders")->where("phone = '" . $phone."'")->where($where)->select();
+                $mOrder = model("Orders")->where("phone = '" . $username."'")->where($where)->select();
                 break;
             case '3':
                 //轉帳後5碼
@@ -36,7 +35,8 @@ class Orders extends Api
                 break;
         }
 
-        
+        Log::record('121212');
+        Log::record($mOrder);
         
 
         $this->success('已送出成功', $mOrder);
