@@ -25,4 +25,7 @@ return [
     'Status 0' => '等待付款',
     'Status 1' => '付款完成',
     'Status 2' => '付款失敗',
+    'card4no' => '信用卡後四碼',
+    'ATMAccNo' => 'ATM後五碼',
+    'WebATMAccNo' => 'WebATM後五碼',
 ];
