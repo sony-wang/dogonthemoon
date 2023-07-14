@@ -61,6 +61,7 @@ class Donate extends Frontend
             'ReturnURL' => $ReturnURL,
             'ChoosePayment' => 'ALL',
             'EncryptType' => 1,
+            'NeedExtraPaidInfo' => 'Y',
             'ClientBackURL' => $ClientBackURL,
             'OrderResultURL' => $OrderResultURL,
         ];
@@ -102,6 +103,7 @@ class Donate extends Frontend
         $szHtml .= '<input name="ReturnURL" value="' . $postData['ReturnURL'] . '" type="hidden">';
         $szHtml .= '<input name="ChoosePayment" value="' . $postData['ChoosePayment'] . '" type="hidden">';
         $szHtml .= '<input name="EncryptType" value="' . $postData['EncryptType'] . '" type="hidden">';
+        $szHtml .= '<input name="NeedExtraPaidInfo" value="' . $postData['NeedExtraPaidInfo'] . '" type="hidden">';
         $szHtml .= '<input name="ClientBackURL" value="' . $postData['ClientBackURL'] . '" type="hidden">';
         $szHtml .= '<input name="OrderResultURL" value="' . $postData['OrderResultURL'] . '" type="hidden">';
         if($mOrder->donate_type == 2){

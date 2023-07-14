@@ -34,7 +34,9 @@ class Notify extends Api
 
             $postData = $post;
             unset($postData['CheckMacValue']);
-            ksort($postData);
+            uksort($postData, function ($first, $second) {
+                    return strcasecmp($first, $second);
+            });
             $signStr = "";
             foreach($postData as $k => $v){
                 $signStr .= $k."=".$v."&";
@@ -93,7 +95,7 @@ class Notify extends Api
                         Log::notice("[".__METHOD__."] 金額不符: ".$post['TradeAmt']);
                     }
                 }else{
-                    Log::notice("[".__METHOD__."] 訂單不存在 : order_no:".$Result['MerchantTradeNo']);
+                    Log::notice("[".__METHOD__."] 訂單不存在 : order_no:".$post['MerchantTradeNo']);
                 }
             }else{
                 Log::notice("[".__METHOD__."] 檢查碼不符 CheckMacValue:".$CheckMacValue." | post CheckMacValue:".$post['CheckMacValue']);
@@ -121,7 +123,9 @@ class Notify extends Api
 
             $postData = $post;
             unset($postData['CheckMacValue']);
-            ksort($postData);
+            uksort($postData, function ($first, $second) {
+                    return strcasecmp($first, $second);
+            });
             $signStr = "";
             foreach($postData as $k => $v){
                 $signStr .= $k."=".$v."&";
@@ -150,7 +154,7 @@ class Notify extends Api
                         Log::notice("[".__METHOD__."] 金額不符: ".$post['TradeAmt']);
                     }
                 }else{
-                    Log::notice("[".__METHOD__."] 訂單不存在 : order_no:".$Result['MerchantTradeNo']);
+                    Log::notice("[".__METHOD__."] 訂單不存在 : order_no:".$post['MerchantTradeNo']);
                 }
             }else{
                 Log::notice("[".__METHOD__."] 檢查碼不符 CheckMacValue:".$CheckMacValue." | post CheckMacValue:".$post['CheckMacValue']);
