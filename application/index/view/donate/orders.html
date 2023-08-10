@@ -32,147 +32,119 @@
               <p class="fs-custom-01 mb-0 genSenRounded">捐款</p>
             </div>
           </div>
-          <div class="d-md-block d-none">
-            <form
-              id="orders-form"
-              class="form-horizontal"
-              role="form"
-              data-toggle="validator"
-              method="POST"
-              action="{:url('api/Orders/add')}"
-            >
-              {:token()}
-              <div
-                class="d-flex justify-content-between ms-md-5 mt-md-4 align-items-center"
-              >
-                <p class="fs-custom-02 mb-0 genSenRounded">
-                  捐款紀錄查詢<img
-                    style="max-height: 2.5rem"
-                    src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png"
-                    alt=""
-                  />
-                </p>
-              </div>
-
-              <div class="form-group mt-3">
-                <h4 class="m-0">
-                  選擇查詢方式
-                  <img
-                    style="max-height: 1.5rem"
-                    src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png"
-                    alt=""
-                  />
-                </h4>
-                {foreach $DonetSerchCate as $k => $item}
-                <input
-                  type="radio"
-                  class="btn-check"
-                  name="donetSerchCate"
-                  id="donetSerchCate_{$k}"
-                  value="{$k}"
-                  autocomplete="off"
-                />
-                <label
-                  class="btn btn-light rounded-pill text-secondary border-dark m-1"
-                  for="donetSerchCate_{$k}"
-                  >{$item}</label
-                >
-                {/foreach}
-              </div>
-
-              <div class="form-group mt-3 row">
-                <label for="donate_name" class="control-label col-xs-12 col-sm-2"
-                  ><img
-                    style="max-height: 2rem"
-                    src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-放大鏡@2x.png"
-                    alt=""
-                /></label>
-                <div class="col-xs-12 col-sm-8">
-                  <input
-                    type="text"
-                    class="form-control text-dark border-dark bg-transparent border-start-0 border-end-0 border-top-0 rounded-0"
-                    id="donate_name"
-                    name="donate_name"
-                    value=""
-                    data-rule=""
-                    placeholder="姓名"
-                    autocomplete="off"
-                  />
-                </div>
-              </div>
-              <div class="form-group mt-3 row">
-                <label for="phone" class="control-label col-xs-12 col-sm-2"
-                  ><img
-                    style="max-height: 2rem"
-                    src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-放大鏡@2x.png"
-                    alt=""
-                /></label>
-                <div class="col-xs-12 col-sm-8">
-                  <input
-                    type="text"
-                    class="form-control text-dark border-dark bg-transparent border-start-0 border-end-0 border-top-0 rounded-0"
-                    id="phone"
-                    name="phone"
-                    value=""
-                    data-rule=""
-                    placeholder="電話"
-                    autocomplete="off"
-                  />
-                </div>
-              </div>
-              <div class="form-group mt-3 row">
-                <label for="AccNo" class="control-label col-xs-12 col-sm-2"
-                  ><img
-                    style="max-height: 2rem"
-                    src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-放大鏡@2x.png"
-                    alt=""
-                /></label>
-                <div class="col-xs-12 col-sm-8">
-                  <input
-                    type="text"
-                    class="form-control text-dark border-dark bg-transparent border-start-0 border-end-0 border-top-0 rounded-0"
-                    id="AccNo"
-                    name="AccNo"
-                    value=""
-                    data-rule=""
-                    placeholder="轉帳後五碼"
-                    autocomplete="off"
-                  />
-                </div>
-              </div>
-              <div class="form-group mt-3 row">
-                <label for="card4no" class="control-label col-xs-12 col-sm-2"
-                  ><img
-                    style="max-height: 2rem"
-                    src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-放大鏡@2x.png"
-                    alt=""
-                /></label>
-                <div class="col-xs-12 col-sm-8">
-                  <input
-                    type="text"
-                    class="form-control text-dark border-dark bg-transparent border-start-0 border-end-0 border-top-0 rounded-0"
-                    id="card4no"
-                    name="card4no"
-                    value=""
-                    data-rule=""
-                    placeholder="信用卡後四碼"
-                    autocomplete="off"
-                  />
-                </div>
-              </div>
-              <div class="submit_wrap">
-                <div class="mt-2 d-flex justify-content-end">
-                  <button type="submit" class="btn text-dark display-1 d-flex justify-content-end" id="submit">
-                    <span class="spinner-border spinner-border d-none" role="status" aria-hidden="true"></span>
-                    <h2>送出查詢</h2>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
+          
         </div>
       </div>
       <div class="col-md-6 col-12">
+        <!--  -->
+        <div class="d-md-block">
+          <form
+            id="orders-form"
+            class="form-horizontal"
+            role="form"
+            data-toggle="validator"
+            method="POST"
+            action="{:url('api/Orders/add')}"
+          >
+            {:token()}
+            <div
+              class="d-flex justify-content-between ms-md-5 mt-md-4 align-items-center"
+            >
+              <p class="fs-custom-02 mb-0 genSenRounded">
+                捐款紀錄查詢<img
+                  style="max-height: 2.5rem"
+                  src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png"
+                  alt=""
+                />
+              </p>
+            </div>
+
+            <div class="form-group mt-3">
+              {foreach $DonetSerchCate as $k => $item}
+              <input
+                type="radio"
+                class="btn-check"
+                name="donetSerchCate"
+                id="donetSerchCate_{$k}"
+                value="{$k}"
+                autocomplete="off"
+              />
+              <label
+                class="btn btn-light rounded-pill text-secondary border-dark m-1"
+                for="donetSerchCate_{$k}"
+                >{$item}</label
+              >
+              {/foreach}
+            </div>
+
+            <div class="form-group mt-3 row">
+              <div class="col-xs-12 col-sm-8">
+                <input
+                  type="text"
+                  class="form-control text-dark border-dark bg-transparent border-start-0 border-end-0 border-top-0 rounded-0"
+                  id="donate_name"
+                  name="donate_name"
+                  value=""
+                  data-rule=""
+                  placeholder="請輸入捐款者姓名"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <div class="form-group mt-3 row d-none" id="accNo_wrap">
+              <div class="col-xs-12 col-sm-8">
+                <input
+                  type="text"
+                  class="form-control text-dark border-dark bg-transparent border-start-0 border-end-0 border-top-0 rounded-0"
+                  id="AccNo"
+                  name="AccNo"
+                  value=""
+                  data-rule=""
+                  placeholder="匯款帳號"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <div class="form-group mt-3 row" id="cardNo_wrap">
+              <div class="col-xs-12 col-sm-8">
+                <input
+                  type="text"
+                  class="form-control text-dark border-dark bg-transparent border-start-0 border-end-0 border-top-0 rounded-0"
+                  id="cardNo"
+                  name="cardNo"
+                  value=""
+                  data-rule=""
+                  placeholder="信用卡卡號"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <div class="submit_wrap">
+              <div class="mt-2 d-flex justify-content-start">
+                <button
+                  type="submit"
+                  class="btn text-dark display-1 d-flex justify-content-end"
+                  id="submit"
+                >
+                  <span
+                    class="spinner-border spinner-border d-none"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                  <h2>
+                    填寫完成確認查詢
+                    <img
+                      style="max-height: 2rem"
+                      src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-放大鏡@2x.png"
+                      alt=""
+                    />
+                  </h2>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!--  -->
         <div class="container p-md-5 noDonateList">
           <img
             class="w-75"
@@ -180,7 +152,7 @@
             alt=""
           />
         </div>
-        <div class="container p-md-5 donateList" style="display: none;">
+        <div class="container p-md-5 donateList" style="display: none">
           <h2>捐款名錄</h2>
           <div class="d-flex justify-content-start">
             <p class="m-0 px-2 py-1">勸募專案</p>
@@ -200,9 +172,7 @@
                 <th scope="col">項目</th>
               </tr>
             </thead>
-            <tbody id="orderList">
-              
-            </tbody>
+            <tbody id="orderList"></tbody>
           </table>
           <div class="d-flex justify-content-center">
             <div style="max-width: 15rem" class="d-flex flex-column">
@@ -236,18 +206,28 @@
       const donetSerchCate = document.querySelectorAll(
         'input[name="donetSerchCate"]'
       );
-      const donetUsername = document.querySelector(
-        'input[name="username"]'
-      );
+      const donetUsername = document.querySelector('input[name="username"]');
+      const accNo_wrap = document.querySelector("#accNo_wrap");
+      const cardNo_wrap = document.querySelector("#cardNo_wrap");
       donetSerchCate.forEach((element, index) => {
-        element.checked = index === 0 ? true : false;
-        if(element.checked)donetUsername.placeholder = `請輸入${element.labels[0].innerHTML}`
-        
+        // element.checked = index === 0 ? true : false;
+        // if (element.checked)
+          // donetUsername.placeholder = `請輸入${element.labels[0].innerHTML}`;
+
         element.addEventListener("change", (e) => {
-          donetUsername.placeholder = `請輸入${e.target.labels[0].innerHTML}`
+          console.log(element.value)
+          console.log(accNo_wrap.classList)
+          console.log(cardNo_wrap.classList)
+          if(element.value === '1'){
+            cardNo_wrap.classList.remove('d-none')
+            accNo_wrap.classList.add('d-none')
+          }else{
+            accNo_wrap.classList.remove('d-none')
+            cardNo_wrap.classList.add('d-none')
+          }
+          // donetUsername.placeholder = `請輸入${e.target.labels[0].innerHTML}`;
         });
       });
-
 
       //送出的Loading
       // const submit = document.querySelector('#submit');

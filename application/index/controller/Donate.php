@@ -14,7 +14,25 @@ class Donate extends Frontend
 
     public function index()
     {
+        $mWebset = model('Webset')->where("`key` = 'donation_project' ")->find();
+        if($mWebset){
+            $donation_project = explode(",", $mWebset->val);
+        }
+        Log::record($mWebset);
+        Log::record($donation_project[0]);
 
+        $DonetSerchCate = [
+            '1' => __('DonetSerchCate 1'), 
+            '2' => __('DonetSerchCate 2'),
+        ];
+        $this->view->assign('donation_project', $donation_project[0]);
+        $this->view->assign('DonetSerchCate', $DonetSerchCate);
+        return $this->view->fetch();
+        
+    }
+
+    public function onlinepayment()
+    {
         $donate_type_list = [
             '1' => "單筆捐款",
             '2' => "定期捐款",
@@ -33,8 +51,6 @@ class Donate extends Frontend
         $this->view->assign('donate_amount_list', $donate_amount_list);
         return $this->view->fetch();
     }
-
-    
     
     public function orderpage($number = '')
     {
@@ -137,12 +153,17 @@ class Donate extends Frontend
         $DonetSerchCate = [
             '1' => __('DonetSerchCate 1'), 
             '2' => __('DonetSerchCate 2'),
-            '3' => __('DonetSerchCate 3'),
-            '4' => __('DonetSerchCate 4')
         ];
         $this->view->assign('donation_project', $donation_project[0]);
         $this->view->assign('DonetSerchCate', $DonetSerchCate);
 
         return $this->view->fetch();
     }
+    public function transfer()
+    {
+
+
+        return $this->view->fetch();
+    }
+
 }

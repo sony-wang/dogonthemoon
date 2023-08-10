@@ -19,7 +19,6 @@ class Donate extends Api
     public function donate()
     {
         Log::init(['Donate' => 'File', 'log_name' => 'Donate']);
-        Log::notice('1122333');
         $donate_type = $this->request->request('donate_type', 1);
         $exec_times = $this->request->request('exec_times', 2);
         $amount = $this->request->request('amount', 500);

@@ -11,150 +11,95 @@
 
   <body class="genSenRounded bg_a">
     <div class="row g-0">
-      <div class="col-md-1">
-        {include file="common/nav" /}
-        </div>
+      <div class="col-md-1">{include file="common/nav" /}</div>
       <div class="col-md-5 col-12 position-relative">
-        <img style="top: 1rem;left: 25%; z-index: 99;" class="logo position-absolute d-none d-md-block" src="__CDN__/assets/img/frontend/home page-流浪動物照護協會@2x.png" alt="">
-        <div class="m-md-5 p-md-5">
-          <div class="d-flex ms-md-5 my-md-4 ">
-            <div class="story d-flex justify-content-start align-items-center">
-              <img style="max-height: 3.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-捐款icon-@2x.png" alt="">
-            </div>
-            <div class="w-100 d-flex align-items-center">
+        <img
+          style="top: 1rem; left: 25%; z-index: 99"
+          class="logo position-absolute d-none d-md-block"
+          src="__CDN__/assets/img/frontend/home page-流浪動物照護協會@2x.png"
+          alt=""
+        />
+        <div class="m-md-5 p-md-5 d-flex flex-column min-vh-100" >
+          <div class="flex-grow-1">
+            <div class="d-flex ms-md-5 my-md-4">
+              <div class="story d-flex justify-content-start align-items-center">
+                <img
+                  style="max-height: 3.5rem"
+                  src="__CDN__/assets/img/frontend/donate/捐款頁-捐款icon-@2x.png"
+                  alt=""
+                />
+              </div>
+              <div class="w-100 d-flex align-items-center">
                 <p class="fs-custom-01 mb-0 genSenRounded">捐款</p>
-            </div>
-          </div>
-          <p class="ms-md-5" style="color:#00000080">園區每月需支付龐大照護、醫療、照護員等費用， 感謝有您相伴， 讓我們在動保路上不孤單。</p>
-          <div class="d-md-block d-none">
-            <div class="d-flex justify-content-between ms-md-5 mt-md-4 align-items-center">
-              <p class="fs-custom-02 mb-0 genSenRounded">我要捐款</p>
-              <div class="d-flex align-items-center">
-                <div class="story d-flex justify-content-start align-items-center">
-                  <img style="max-height: 2.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-我要捐款箭頭-right-@2x.png" alt="">
-                </div>
               </div>
             </div>
-            <p class="ms-md-5" style="color:#00000080">請填寫右側表單</p>
+            <div class="ms-md-5 my-md-4">
+              <p style="color: #00000080;">公益不是少數人的大愛而是多數人的小愛!協會的收入/支出將定期更新於各官網平台，方便大家隨時查詢、關注後續的運用與效益!善款均可依綜合所得稅申報辦法列舉扣除</p>
+            </div>
           </div>
-          <a href="donate/orders" class="mt-5 ms-md-5 fs-4 text-dark text-decoration-none">捐款紀錄查詢<img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-捐款紀錄查詢icon@2x.png" alt=""></a>
+            <div class="ms-md-5 my-md-4 mt-auto">
+              <h3>林媽媽和全體照護員感謝您的愛心!</h3>
+            </div>
         </div>
       </div>
       <div class="col-md-6 col-12">
-        <div class="container p-md-5">
-          <form name="form" id="donate-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="{:url('api/donate/donate')}">
-            {:token()}
-            <div class="form-group">
-                <h4 class="m-0">選擇捐款方式
-                  <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
-                </h4>
-                  {foreach $donate_type_list as $k => $item}
-                  <input type="radio" class="btn-check " name="donate_type_list" id="donate_type-{$k}" value="{$k}" autocomplete="off">
-                  <label class="btn btn-light rounded-pill text-secondary border-dark" for="donate_type-{$k}">{$item}</label>
-                  {/foreach}
+        <div class="d-inline-block bg w-100 min-vh-100">
+          <div class="container p-md-5">
+            <div class="d-flex flex-column w-75">
+              <a class="fs-3 w-50 text-dark text-decoration-none d-flex justify-content-between" href="donate/transfer">
+                匯款捐款
+                <img style="max-height: 2rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-我要捐款箭頭-right-@2x.png" alt="">
+              </a>
+              <a class="fs-3 w-50 my-2 text-dark text-decoration-none d-flex justify-content-between" href="donate/onlinepayment">
+                信用卡捐款
+                <img style="max-height: 2rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-我要捐款箭頭-right-@2x.png" alt="">
+              </a>
+              <a class="fs-3 w-50 my-2 text-dark text-decoration-none d-flex justify-content-between" href="donate/orders">
+                捐款紀錄查詢
+                <img style="max-height: 2rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-我要捐款箭頭-right-@2x.png" alt="">
+              </a>
             </div>
-            <div class="form-group mt-3" id="exec_times_wrap" style="display:none">
-                <h4 for="exec_times" class="control-label">定額次數
-                  <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
-                </h4>
-                <div class="col-xs-12 col-sm-8">
-                    <input type="number" class="form-control rounded-pill text-secondary border-dark" id="exec_times" name="exec_times" value="2" data-rule="" placeholder="" autocomplete="off">
-                </div>
-            </div>
-            <div class="form-group mt-3">
-                <h4 for="donate_amount" class="control-label">選擇捐款金額或自訂金額
-                  <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
-                </h4>
-                <div class="col-xs-12 col-sm-8">
-                    <select class="form-select rounded-pill text-secondary border-dark" id="floatingSelect" aria-label="Floating label select example">
-                      <option selected>選擇金額</option>
-                      {foreach $donate_amount_list as $k => $item}
-                      <option value="{$k}">{$item}</option>
-                      {/foreach}
-                    </select>
-                    <!-- {:build_select('donate_amount', $donate_amount_list, 0, ['class'=>'form-control', 'data-rule'=>'required'])} -->
-                </div>
-            </div>
-            <div class="form-group" id="amount_wrap" style="display:none">
-                <label for="amount" class="control-label col-xs-12 col-sm-2"></label>
-                <div class="col-xs-12 col-sm-8">
-                    <input type="number" class="form-control btn-light rounded-pill text-secondary border-dark" id="amount" name="amount" value="1000" data-rule="required" placeholder="" autocomplete="off">
-                </div>
-            </div>
-            <div class="form-group mt-3">
-                <h4>填寫捐款基本資料
-                  <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
-                </h4>
-                <p class="h6 text-secondary">若有捐款相關問題，我們可以儘速與您聯繫。</p>
-            </div>
-            <div class="form-group mt-3 row">
-                <label for="donate_name" class="control-label col-xs-12 col-sm-2">您的姓名:</label>
-                <div class="col-xs-12 col-sm-8">
-                    <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="donate_name" name="donate_name" value="" data-rule="required" placeholder="" autocomplete="off">
-                </div>
-            </div>
-            <div class="form-group mt-3 row">
-                <label for="phone" class="control-label col-xs-12 col-sm-2">聯絡手機:</label>
-                <div class="col-xs-12 col-sm-8">
-                    <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="phone" name="phone" value="" data-rule="required" placeholder="" autocomplete="off">
-                </div>
-            </div>
-            <div class="form-group mt-3 row">
-                <label for="address" class="control-label col-xs-12 col-sm-2">郵寄地址:</label>
-                <div class="col-xs-12 col-sm-8">
-                    <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="address" name="address" value="" data-rule="required" placeholder="" autocomplete="off">
-                </div>
-            </div>
-            <div class="form-group mt-3">
-              <div class="d-flex justify-content-end col-xs-12 col-sm-10">
-                <input type="checkbox" class="form-check-input mx-2" id="invoice" name="invoice" value="" >
-                <label for="invoice" class="control-label text-secondary">寄發紙本抵稅收據</label>
-              </div>
-            </div>
-            
-            <div class="form-group mt-5">
-              <div class="d-flex justify-content-end col-xs-12 col-sm-10">
-                <button type="submit" class="btn text-dark display-1">
-                  <h2>快速捐款  
-                    <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-捐款紀錄查詢icon@2x.png" alt="">
-                  </h2>
-                </button>
-              </div>
-            </div>
-        </form>
+            <!-- <img
+              class="w-75"
+              src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-deco-小狗.png"
+              alt=""
+            /> -->
+          </div>
         </div>
       </div>
     </div>
     {include file="common/script" /}
     <script>
-      const donate_type_list = document.querySelectorAll('input[name="donate_type_list"]');
-      const exec_times_wrap = document.querySelector('#exec_times_wrap');
-      donate_type_list.forEach((element,index) => {
+      const donetSerchCate = document.querySelectorAll(
+        'input[name="donetSerchCate"]'
+      );
+      const donetUsername = document.querySelector('input[name="username"]');
+      const AccNo_wrap = document.querySelector("#AccNo_wrap");
+      const card4no_wrap = document.querySelector("#card4no_wrap");
+      donetSerchCate.forEach((element, index) => {
+        
         element.checked = index === 0 ? true : false;
-        element.addEventListener('change', (e)=>{
-          if(document.querySelector('input[name="donate_type_list"]:checked').value === '2'){
-            exec_times_wrap.style.display = 'block';
-          } else {
-            exec_times_wrap.style.display = 'none';
-          }
-        })
+        if (element.checked)
+          // donetUsername.placeholder = `請輸入${element.labels[0].innerHTML}`;
+
+        element.addEventListener("change", (e) => {
+          console.log(e)
+          // donetUsername.placeholder = `請輸入${e.target.labels[0].innerHTML}`;
+        });
       });
 
-      const floatingSelect = document.querySelector('#floatingSelect');
-      const amount_wrap = document.querySelector('#amount_wrap');
-      const amount = document.querySelector('#amount');
-      console.log(floatingSelect)
-      floatingSelect.addEventListener('change', (e)=>{
-        console.log(floatingSelect.value)
-        if(floatingSelect.value == '0'){
-          amount_wrap.style.display='block';
-        } else {
-          amount_wrap.style.display='none';
-          amount.value = floatingSelect.value; //選擇自訂以外的數值則直接填上
-        }
-      })
-      
+      //送出的Loading
+      // const submit = document.querySelector('#submit');
+      // submit.addEventListener('click',()=>{
+      //   submit.children[0].classList.remove('d-none')
+      // })
     </script>
+    <style>
+      .bg{
+        background: url('__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-deco-小狗.png') no-repeat;
+        background-size: 60%;
+        background-position-y: 130%;
+      }
+    </style>
   </body>
-  <!-- <div id="toast-container" class="toast-top-center"><div class="toast toast-error" aria-live="assertive" style="display: block;"><button type="button" class="toast-close-button" role="button">×</button><div class="toast-message">[捐款金額]必須大於0</div></div></div> -->
 </html>

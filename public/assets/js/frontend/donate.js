@@ -7,7 +7,7 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
         }
     };
     var Controller = {
-        index: function () {
+        onlinepayment: function () {
             Form.api.bindevent($("#donate-form"), function (mthis, data, ret) {
                 location.href = Config.url.furl+'/index/donate/orderpage/number/'+data.data;
             });

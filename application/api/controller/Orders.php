@@ -56,8 +56,6 @@ class Orders extends Api
         //         break;
         // }
 
-        Log::record('121212');
-        Log::record($mOrder);
         
         if($mOrder){
             $this->success('已送出成功', $mOrder);
