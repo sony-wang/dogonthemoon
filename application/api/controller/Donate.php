@@ -22,13 +22,15 @@ class Donate extends Api
         $donate_type = $this->request->request('donate_type', 1);
         $exec_times = $this->request->request('exec_times', 2);
         $amount = $this->request->request('amount', 500);
-        $phone = $this->request->request('phone', '');
+        // $phone = $this->request->request('phone', '');
         $donate_name = $this->request->request('donate_name', '');
+        $AccNo = $this->request->request('AccNo', '');
+        $cardNo = $this->request->request('cardNo', '');
         
         Log::notice('donate_type:'. $donate_type);
         Log::notice('exec_times:'. $exec_times);
         Log::notice('amount:'. $amount);
-        Log::notice('phone:'. $phone);
+        // Log::notice('phone:'. $phone);
         Log::notice('donate_name:'. $donate_name);
 
         
@@ -36,12 +38,16 @@ class Donate extends Api
         if($amount <= 0){
             $this->error('[捐款金額]必須大於0');
         }
-        if($phone == ''){
-            $this->error('[手機號碼]不得為空');
-        }
+        // if($phone == ''){
+        //     $this->error('[手機號碼]不得為空');
+        // }
         if($donate_name == ''){
             $this->error('[捐款人]不得為空');
         }
+        if($cardNo == '' && $AccNo == ''){
+            $this->error('[卡號或帳號]不得為空');
+        }
+        
         
         $order_no = "DT".date('YmdHis');
 
@@ -55,8 +61,10 @@ class Donate extends Api
             'order_no' => $order_no,
             'amount' => $amount,
             'donate_type' => $donate_type,
-            'phone' => $phone,
+            // 'phone' => $phone,
             'donate_name' => $donate_name,
+            'ATMAccNo' => $AccNo,
+            'card4no' => $cardNo,
             'donation_project' => $donation_project,
             'status' => 0,
         ];

@@ -46,19 +46,23 @@
         </div>
       <div class="col-md-6 col-12">
         <div class="container p-md-5">
-          <div class="d-flex">
-            <h2 class="me-3">
+          <div class="d-flex mb-4">
+            <h2 class="me-3 position-relative">
               信用卡捐款
               <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
+              <img class="position-absolute" style="max-height: 1rem; top: 2.5rem;left: 0;" src="__CDN__/assets/img/frontend/donate/组 323.png" alt="">
             </h2>
-            <a class="text-decoration-none text-dark fs-3 ms-3" href="#" onclick="history.back()">回上一頁</a>
+            <a class="text-decoration-none text-dark fs-3 ms-3" href="#" onclick="history.back()">
+              回上一頁
+              <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向上箭頭@2x.png" alt="">
+            </a>
           </div>
           <form name="form" id="donate-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="{:url('api/donate/donate')}">
             {:token()}
             <div class="form-group">
-                <h4 class="m-0">選擇捐款方式
-                  <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
-                </h4>
+                <h5 class="m-0">選擇捐款方式
+                  <img style="max-height: 1rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
+                </h5>
                   {foreach $donate_type_list as $k => $item}
                   <input type="radio" class="btn-check " name="donate_type_list" id="donate_type-{$k}" value="{$k}" autocomplete="off">
                   <label class="btn btn-light rounded-pill text-secondary border-dark" for="donate_type-{$k}">{$item}</label>
