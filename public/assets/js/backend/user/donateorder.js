@@ -31,7 +31,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'phone', title: __('phone'), operate: 'LIKE'},
                         {field: 'amount', title: __('amount'), operate: 'LIKE'},
                         {field: 'donation_project', title: __('donation_project'), operate: 'LIKE'},
-                        {field: 'donate_type', title: __('donate_type'), formatter: Controller.api.formatter.donate_type, searchList: {1: __('donate_type 1'), 2: __('donate_type 2')}},
+                        {field: 'donate_type', title: __('donate_type'), formatter: Controller.api.formatter.donate_type, searchList: {1: __('donate_type 1'), 2: __('donate_type 2'), 3: __('donate_type 3')}},
                         {field: 'PeriodType', title: __('PeriodType'), operate: 'LIKE', operate: false, visible: false},
                         {field: 'Frequency', title: __('Frequency'), operate: 'LIKE', operate: false, visible: false},
                         {field: 'ExecTimes', title: __('ExecTimes'), operate: 'LIKE'},
@@ -80,7 +80,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 },
                 donate_type: function (value, row, index, custom) {
                     var colorArr = {'1':'info','2':'orange'};
-                    var valueArr = {'1':__('donate_type 1'),'2':__('donate_type 2')};
+                    var valueArr = {'1':__('donate_type 1'),'2':__('donate_type 2'),'3':__('donate_type 3')};
                     if (typeof custom !== 'undefined') {
                         colorArr = $.extend(colorArr, custom);
                     }

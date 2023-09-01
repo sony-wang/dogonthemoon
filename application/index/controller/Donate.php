@@ -161,8 +161,10 @@ class Donate extends Frontend
     }
     public function transfer()
     {
-
-
+        return $this->view->fetch();
+    }
+    public function receipt()
+    {
         return $this->view->fetch();
     }
 

@@ -9,6 +9,7 @@ return [
     'donate_type' => '捐款方式',
     'donate_type 1' => '單筆捐款',
     'donate_type 2' => '定期捐款',
+    'donate_type 3' => '匯款',
     'PeriodType' => '定額週期種類',
     'Frequency' => '定額頻率',
     'ExecTimes' => '定額次數',

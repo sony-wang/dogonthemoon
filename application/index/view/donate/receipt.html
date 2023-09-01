@@ -36,19 +36,16 @@
                 </div>
               </div>
               <div class="ms-md-5 my-md-4">
-                <p style="color: #00000080;">公益不是少數人的大愛而是多數人的小愛!協會的收入/支出將定期更新於各官網平台，方便大家隨時查詢、關注後續的運用與效益!善款均可依綜合所得稅申報辦法列舉扣除</p>
+                <p style="color: #00000080;">林媽媽和全體照護員感謝您的愛心</p>
               </div>
             </div>
-              <div class="ms-md-5 my-md-4 mt-auto">
-                <h3>林媽媽和全體照護員感謝您的愛心!</h3>
-              </div>
           </div>
         </div>
       <div class="col-md-6 col-12">
         <div class="container p-md-5">
           <div class="d-flex mb-4">
             <h2 class="me-3 position-relative">
-              信用卡捐款
+              紙本抵稅收據
               <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
               <img class="position-absolute" style="max-height: 1rem; top: 2.5rem;left: 0;" src="__CDN__/assets/img/frontend/donate/组 323.png" alt="">
             </h2>
@@ -57,45 +54,9 @@
               <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向上箭頭@2x.png" alt="">
             </a>
           </div>
-          <form name="form" id="donate-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="{:url('api/donate/donate')}">
+          <form name="form" id="receipt-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="{:url('api/donate/donate')}">
             {:token()}
-            <div class="form-group">
-                <h5 class="m-0">選擇捐款方式
-                  <img style="max-height: 1rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
-                </h5>
-                  {foreach $donate_type_list as $k => $item}
-                  <input type="radio" class="btn-check " name="donate_type" id="donate_type-{$k}" value="{$k}" autocomplete="off">
-                  <label class="btn btn-light rounded-pill text-secondary border-dark" for="donate_type-{$k}">{$item}</label>
-                  {/foreach}
-            </div>
-            <div class="form-group mt-3" id="exec_times_wrap" style="display:none">
-                <h4 for="exec_times" class="control-label">定額次數
-                  <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
-                </h4>
-                <div class="col-xs-12 col-sm-8">
-                    <input type="number" class="form-control rounded-pill text-secondary border-dark" id="exec_times" name="exec_times" value="2" data-rule="" placeholder="" autocomplete="off">
-                </div>
-            </div>
-            <div class="form-group mt-3">
-                <h4 for="donate_amount" class="control-label">選擇捐款金額或自訂金額
-                  <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
-                </h4>
-                <div class="col-xs-12 col-sm-8">
-                    <select class="form-select rounded-pill text-secondary border-dark" id="floatingSelect" aria-label="Floating label select example">
-                      <option selected>選擇金額</option>
-                      {foreach $donate_amount_list as $k => $item}
-                      <option value="{$k}">{$item}</option>
-                      {/foreach}
-                    </select>
-                    <!-- {:build_select('donate_amount', $donate_amount_list, 0, ['class'=>'form-control', 'data-rule'=>'required'])} -->
-                </div>
-            </div>
-            <div class="form-group" id="amount_wrap" style="display:none">
-                <label for="amount" class="control-label col-xs-12 col-sm-2"></label>
-                <div class="col-xs-12 col-sm-8">
-                    <input type="number" class="form-control btn-light rounded-pill text-secondary border-dark" id="amount" name="amount" value="1000" data-rule="required" placeholder="" autocomplete="off">
-                </div>
-            </div>
+            <input type="hidden" id="donate_type" name="donate_type" value="3">
             <div class="form-group mt-3">
                 <h4>填寫捐款基本資料
                   <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png" alt="">
@@ -120,20 +81,13 @@
                     <input type="text" class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0" id="address" name="address" value="" data-rule="required" placeholder="" autocomplete="off">
                 </div>
             </div>
+            
             <div class="form-group mt-3">
               <div class="d-flex justify-content-end col-xs-12 col-sm-10">
-                <input type="checkbox" class="form-check-input mx-2" id="invoice" name="invoice" value="" >
-                <label for="invoice" class="control-label text-secondary">寄發紙本抵稅收據</label>
-              </div>
-            </div>
-            
-            <div class="form-group mt-5">
-              <div class="d-flex justify-content-end col-xs-12 col-sm-10">
-                <button type="submit" class="btn text-dark display-1">
-                  <h2>快速捐款  
+                  <button id="receipt_submit" type="submit" class="btn text-dark display-1 fs-2">
+                    送出  
                     <img style="max-height: 1.5rem;" src="__CDN__/assets/img/frontend/donate/捐款頁-捐款紀錄查詢icon@2x.png" alt="">
-                  </h2>
-                </button>
+                  </button>
               </div>
             </div>
         </form>
@@ -155,19 +109,19 @@
         })
       });
 
-      const floatingSelect = document.querySelector('#floatingSelect');
-      const amount_wrap = document.querySelector('#amount_wrap');
-      const amount = document.querySelector('#amount');
-      console.log(floatingSelect)
-      floatingSelect.addEventListener('change', (e)=>{
-        console.log(floatingSelect.value)
-        if(floatingSelect.value == '0'){
-          amount_wrap.style.display='block';
-        } else {
-          amount_wrap.style.display='none';
-          amount.value = floatingSelect.value; //選擇自訂以外的數值則直接填上
-        }
-      })
+      // const floatingSelect = document.querySelector('#floatingSelect');
+      // const amount_wrap = document.querySelector('#amount_wrap');
+      // const amount = document.querySelector('#amount');
+      // console.log(floatingSelect)
+      // floatingSelect.addEventListener('change', (e)=>{
+      //   console.log(floatingSelect.value)
+      //   if(floatingSelect.value == '0'){
+      //     amount_wrap.style.display='block';
+      //   } else {
+      //     amount_wrap.style.display='none';
+      //     amount.value = floatingSelect.value; //選擇自訂以外的數值則直接填上
+      //   }
+      // })
       
     </script>
   </body>

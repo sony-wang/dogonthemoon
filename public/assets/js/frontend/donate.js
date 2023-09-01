@@ -12,6 +12,46 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                 location.href = Config.url.furl+'/index/donate/orderpage/number/'+data.data;
             });
         },
+        receipt: function () {
+
+            $(document).on("click", "#receipt_submit", function (e) {
+                // receipt_submit.disabled=true
+                console.log(e.target.disabled=true)
+                console.log(112233)
+                // Layer.open({
+                //     type: 1,
+                //     title: __('Reset password'),
+                //     area: ["450px", "355px"],
+                //     content: 'AAAAAAAAAAAAAAAAAAAAAA',
+                //     success: function (layero) {
+                //         Form.api.bindevent($("#receipt-form"), function (mthis, data, ret) {
+                            
+                //             this[0].reset()
+                //             Layer.closeAll();
+                //         });
+
+                //     }
+                // });
+                Form.api.bindevent($("#receipt-form"), function (mthis, data, ret) {
+                    receipt_submit.disabled = false;
+                    this[0].reset()
+                });
+            });
+
+
+            // const donate_name = document.querySelector('#donate_name');
+            // const phone = document.querySelector('#phone');
+            // const address = document.querySelector('#address');
+
+            // const receipt_submit = document.querySelector('#receipt_submit');
+            // receipt_submit.addEventListener('click',(e)=>{
+            //     console.log(this)
+            //     console.log(receipt_submit)
+            //     console.log(receipt_submit.disabled=true)
+            // })
+
+            
+        },
         orders: function () {
             const submit = document.querySelector('#submit');
             submit.addEventListener('click',()=>{
