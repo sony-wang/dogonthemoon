@@ -145,6 +145,10 @@ body.bg_c {
     opacity: 1!important;
     color: #ffffff!important;
 }
+
+#p-img img{
+    max-width: 100%;
+}
 @media screen and (max-width: 1400px) {}
 @media screen and (max-width: 1200px) {}
 @media screen and (max-width: 992px) {}

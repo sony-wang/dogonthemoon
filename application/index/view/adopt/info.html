@@ -149,11 +149,11 @@
                   />
                 </div>
                 <label for="img" class="control-label col-xs-12 col-sm-3"
-                  >提供飼養環境照片：</label
+                  >提供飼養環境照片(2MB以下)：</label
                 >
                 <div class="col-xs-12 col-sm-9">
-                    <button type="button" class="btn faupload" data-input-id="img" data-maxsize="1m" data-mimetype="image/jpeg,image/png,image/jpg" data-multiple="true" data-preview-id="p-img">選擇圖片</button>
-                    <input id="img" name="img" type="text" value="" data-rule="required">
+                    <button type="button" class="btn faupload" data-input-id="img" data-maxsize="2m" data-mimetype="image/jpeg,image/png,image/jpg" data-multiple="true" data-preview-id="p-img">選擇圖片</button>
+                    <input id="img" name="img" type="hidden" value="" data-rule="required">
                     <ul class="row list-inline faupload-preview" id="p-img"></ul>
                 </div>
               </div>
@@ -162,8 +162,8 @@
                   <button
                     type="submit"
                     class="btn text-dark display-1"
-                    onclick="location.href='done'"
-                  >
+                    >
+                    <!-- onclick="location.href='done'" -->
                     <h2>確認認養!</h2>
                   </button>
                   <!-- </div> -->

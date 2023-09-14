@@ -29,7 +29,7 @@ class Volunteer extends Api
 
         model('Volunteer')::create($params);
 
-        $this->success('已送出成功');
+        $this->success('已送出義工報名，我們將有專人與您聯繫。<br>請留意信箱或來電，謝謝您的愛心!');
         // $exec_times = $this->request->request('exec_times', 2);
         // $amount = $this->request->request('amount', 500);
         // $phone = $this->request->request('phone', '');
