@@ -30,55 +30,6 @@ class Volunteer extends Api
         model('Volunteer')::create($params);
 
         $this->success('已送出義工報名，我們將有專人與您聯繫。<br>請留意信箱或來電，謝謝您的愛心!');
-        // $exec_times = $this->request->request('exec_times', 2);
-        // $amount = $this->request->request('amount', 500);
-        // $phone = $this->request->request('phone', '');
-        // $donate_name = $this->request->request('donate_name', '');
         
-        // Log::notice('donate_type:'. $donate_type);
-        // Log::notice('exec_times:'. $exec_times);
-        // Log::notice('amount:'. $amount);
-        // Log::notice('phone:'. $phone);
-        // Log::notice('donate_name:'. $donate_name);
-
-        
-
-        // if($amount <= 0){
-        //     $this->error('[捐款金額]必須大於0');
-        // }
-        // if($phone == ''){
-        //     $this->error('[手機號碼]不得為空');
-        // }
-        // if($donate_name == ''){
-        //     $this->error('[捐款人]不得為空');
-        // }
-        
-        // $order_no = "DT".date('YmdHis');
-
-        // $mWebset = model("Webset")->where("`key` = 'donation_project'")->find();
-        // if($mWebset){
-        //     $donation_project = $mWebset->val;
-        // }else{
-        //     $donation_project = "尚未設定";
-        // }
-        // $params = [
-        //     'order_no' => $order_no,
-        //     'amount' => $amount,
-        //     'donate_type' => $donate_type,
-        //     'phone' => $phone,
-        //     'donate_name' => $donate_name,
-        //     'donation_project' => $donation_project,
-        //     'status' => 0,
-        // ];
-        
-        // if($donate_type == 2){
-        //     $params['ExecTimes'] = $exec_times;
-        //     $params['Frequency'] = 1;//週期間隔
-        //     $params['PeriodType'] = 'D';//測試時用天
-        // }
-
-        // model('Donateorder')::create($params);
-
-        // $this->success('訂單產生, 前往結帳');
     }
 }

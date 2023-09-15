@@ -19,6 +19,7 @@ class Adopt extends Api
         $email = $this->request->request('email');
         $phone = $this->request->request('phone');
         $img = $this->request->request('img');
+        $pet_id = $this->request->request('pet_id');
 
 
         $params = [
@@ -29,6 +30,7 @@ class Adopt extends Api
             'email' => $email,
             'phone' => $phone,
             'img' => $img,
+            'pet_id' => $pet_id,
         ];
 
         model('Adopt')::create($params);

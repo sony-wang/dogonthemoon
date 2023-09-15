@@ -76,6 +76,7 @@ class Donate extends Api
             'donate_name' => $donate_name,
             'ATMAccNo' => $AccNo,
             'donation_project' => $donation_project,
+            'receipt' => 0,
             'status' => 0,
         ];
         

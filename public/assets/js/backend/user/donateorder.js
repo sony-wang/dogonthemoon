@@ -8,7 +8,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                     index_url: 'user/donateorder/index',
                     add_url: 'user/donateorder/add',
                     edit_url: 'user/donateorder/edit',
-                    del_url: 'user/donateorder/del',
+                    // del_url: 'user/donateorder/del',
                     table: 'donate_order',
                 }
             });
@@ -46,10 +46,11 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'WebATMAccNo', title: __('WebATMAccNo'), operate: 'LIKE'},
                         {field: 'CheckMacValue', title: __('CheckMacValue'), operate: 'LIKE', operate: false, visible: false},
                         {field: 'result', title: __('result'), operate: 'LIKE', operate: false, visible: false},
+                        {field: 'receipt', title: __('receipt'), formatter: Controller.api.formatter.receipt, searchList: {0: __('Receipt 0'), 1: __('Receipt 1')}},
                         {field: 'status', title: __('Status'), formatter: Controller.api.formatter.status, searchList: {0: __('Status 0'), 1: __('Status 1'), 2: __('Status 2')}},
                         {field: 'createtime', title: __('createtime'), formatter: Table.api.formatter.datetime, operate: 'RANGE', addclass: 'datetimerange', sortable: true, visible: false},
                         {field: 'updatetime', title: __('updatetime'), formatter: Table.api.formatter.datetime, operate: 'RANGE', addclass: 'datetimerange', sortable: true},
-                        // {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
+                        {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
             });
@@ -72,6 +73,15 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 status: function (value, row, index, custom) {
                     var colorArr = {'0':'orange','1':'success','2':'danger'};
                     var valueArr = {'0':__('Status 0'),'1':__('Status 1'),'2':__('Status 2')};
+                    if (typeof custom !== 'undefined') {
+                        colorArr = $.extend(colorArr, custom);
+                    }
+                    var color = typeof colorArr[value] !== 'undefined' ? colorArr[value] : 'orange';
+                    return '<span class="text-' + color + '">' + valueArr[value] + '</span>';
+                },
+                receipt: function (value, row, index, custom) {
+                    var colorArr = {'0':'orange','1':'success','2':'danger'};
+                    var valueArr = {'0':__('Receipt 0'),'1':__('Receipt 1'),'2':__('Receipt 2')};
                     if (typeof custom !== 'undefined') {
                         colorArr = $.extend(colorArr, custom);
                     }

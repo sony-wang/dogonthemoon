@@ -107,6 +107,13 @@
                   >是否養過寵物：</label
                 >
                 <div class="col-xs-12 col-sm-9">
+                  <select  id="hadpet" class="form-control" name="hadpet" data-rule="required">
+                    <option value="" selected>請選擇</option>
+                    <option value="是">是</option>
+                    <option value="否">否</option>
+                </select>
+                </div>
+                <!-- <div class="col-xs-12 col-sm-9">
                   <input
                     type="text"
                     class="form-control text-secondary bg-transparent border-start-0 border-end-0 border-top-0 rounded-0"
@@ -117,7 +124,7 @@
                     placeholder=""
                     autocomplete="off"
                   />
-                </div>
+                </div> -->
                 <label for="email" class="control-label col-xs-12 col-sm-3"
                   >Email:</label
                 >
@@ -157,6 +164,8 @@
                     <ul class="row list-inline faupload-preview" id="p-img"></ul>
                 </div>
               </div>
+              <!-- 隱藏值 -->
+              <input id="pet_id" name="pet_id" type="hidden" value="{$id}" data-rule="required">
               <div class="submit_wrap">
                 <div class="mt-2 d-flex justify-content-end">
                   <button

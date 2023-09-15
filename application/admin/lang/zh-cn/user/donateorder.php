@@ -29,4 +29,7 @@ return [
     'card4no' => '信用卡後四碼',
     'ATMAccNo' => 'ATM後五碼',
     'WebATMAccNo' => 'WebATM後五碼',
+    'Receipt' => '抵稅收據',
+    'Receipt 0' => '未處理',
+    'Receipt 1' => '已處理',
 ];

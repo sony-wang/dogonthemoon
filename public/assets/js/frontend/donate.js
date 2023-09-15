@@ -16,8 +16,8 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
 
             $(document).on("click", "#receipt_submit", function (e) {
                 // receipt_submit.disabled=true
-                console.log(e.target.disabled=true)
-                console.log(112233)
+                // console.log(e.target.disabled=true)
+                // console.log(112233)
                 // Layer.open({
                 //     type: 1,
                 //     title: __('Reset password'),
@@ -33,7 +33,7 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
                 //     }
                 // });
                 Form.api.bindevent($("#receipt-form"), function (mthis, data, ret) {
-                    receipt_submit.disabled = false;
+                    // receipt_submit.disabled = false;
                     this[0].reset()
                 });
             });

@@ -80,7 +80,7 @@ class Volunteer extends Backend
                     }
 
                     $params['join_time'] = strtotime($params['join_time']);
-                    $params['birthday'] = strtotime($params['birthday']);
+                    // $params['birthday'] = strtotime($params['birthday']);
 
                     $result = $this->model->allowField(true)->save($params);
                     Db::commit();
@@ -128,7 +128,7 @@ class Volunteer extends Backend
                 try {
                     
                     $params['join_time'] = strtotime($params['join_time']);
-                    $params['birthday'] = strtotime($params['birthday']);
+                    // $params['birthday'] = strtotime($params['birthday']);
 
                     $result = $row->allowField(true)->save($params);
                     Db::commit();
@@ -150,8 +150,8 @@ class Volunteer extends Backend
             }
             $this->error(__('Parameter %s can not be empty', ''));
         }
-        $row->join_time = date('Y-m-d',$row->join_time);
-        $row->birthday = date('Y-m-d',$row->birthday);
+        // $row->join_time = date('Y-m-d',$row->join_time);
+        // $row->birthday = date('Y-m-d',$row->birthday);
         $this->view->assign("row", $row);
         return $this->view->fetch();
     }

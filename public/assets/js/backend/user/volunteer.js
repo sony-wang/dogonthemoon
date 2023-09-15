@@ -30,7 +30,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'name', title: __('name'), operate: 'LIKE'},
                         // {field: 'birthday', title: __('birthday'), formatter: Table.api.formatter.datetime, operate: 'RANGE', addclass: 'datetimerange', datetimeFormat: 'YYYY-MM-DD', sortable: true},
                         // {field: 'idnum', title: __('idnum'), operate: 'LIKE'},
-                        {field: 'participants_number', title: __('number_of_people'), operate: 'LIKE'},
+                        {field: 'number_of_people', title: __('number_of_people'), operate: 'LIKE'},
                         {field: 'phone', title: __('phone'), operate: 'LIKE'},
                         {field: 'email', title: __('email'), operate: 'LIKE'},
                         {field: 'status', title: __('Status'), formatter: Controller.api.formatter.status, searchList: {0: __('Status 0'), 1: __('Status 1')}},
