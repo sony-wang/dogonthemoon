@@ -7,6 +7,14 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
         }
     };
     var Controller = {
+        index: function () {
+            Form.api.bindevent($("#contact-form"),function (mthis, data, ret) {
+                if(data.code === 1){
+                    $("#contact-form")[0].reset()
+                }
+                // location.href = Config.url.furl+'/index/donate/orderpage/number/'+data.data;
+            });
+        }
     };
     return Controller;
 });

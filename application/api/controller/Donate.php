@@ -42,6 +42,9 @@ class Donate extends Api
             if($address == ''){
                 $this->error('[地址]不得為空');
             }
+            if($AccNo == ''){
+                $this->error('[匯款帳號]不得為空');
+            }
         }else{
             if($amount <= 0){
                 $this->error('[捐款金額]必須大於0');
@@ -55,9 +58,7 @@ class Donate extends Api
         if($donate_name == ''){
             $this->error('[捐款人]不得為空');
         }
-        if($AccNo == ''){
-            $this->error('[匯款帳號]不得為空');
-        }
+        
         
         $order_no = "DT".date('YmdHis');
 
