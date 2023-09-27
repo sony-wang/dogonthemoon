@@ -59,6 +59,14 @@ class Frontend extends Controller
 
     public function _initialize()
     {
+        Log::record('112233');
+        $key = request()->param('key', null, 'trim,strip_tags,htmlspecialchars');
+        Log::record($key);
+        if($key !== 'dog'){
+            header("Location: https://google.com.tw");
+            die();
+        }
+        
         //移除HTML标签
         $this->request->filter('trim,strip_tags,htmlspecialchars');
         $modulename = $this->request->module();

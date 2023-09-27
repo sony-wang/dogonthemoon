@@ -8,6 +8,17 @@ define(['jquery', 'bootstrap', 'frontend', 'form', 'template'], function ($, und
     };
     var Controller = {
         onlinepayment: function () {
+            const receipt = $('#receipt')[0]
+            const address_wrap = $('#address_wrap')[0]
+            // receipt.addEventListener('change',(e)=>{
+            //     if(e.target.checked){
+            //         console.log(address_wrap)
+            //         address_wrap.style.display='flex'
+            //     }else{
+            //         address_wrap.style.display='none'
+
+            //     }
+            // })
             Form.api.bindevent($("#donate-form"), function (mthis, data, ret) {
                 location.href = Config.url.furl+'/index/donate/orderpage/number/'+data.data;
             });
