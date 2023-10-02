@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {include file="common/meta" /}
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.staticfile.org/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="genSenRounded bg_a">
+    <div class="container">
+      <div class="row g-0">
+        <h2>網站建置中，造成不便敬請見諒</h2>
+        <h2>Under Construction</h2>
+        <div class="col-md-5 col-12 position-relative">
+          <img
+            style="top: 1rem; left: 25%; z-index: 99"
+            class="logo position-absolute d-none d-md-block"
+            src="__CDN__/assets/img/frontend/home page-流浪動物照護協會@2x.png"
+            alt=""
+          />
+          <img
+            style="top: 35%; right: 0%"
+            class="w-50 position-absolute"
+            src="__CDN__/assets/img/frontend/home/home page-deco-dog-1@2x.png"
+            alt=""
+          />
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="container">
+            <div class="position-relative">
+              <!-- Swiper -->
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper"></div>
+              </div>
+            </div>
+
+            <!-- <div class="d-flex justify-content-between mt-4">
+              <div class="w-50 d-flex">
+                <div
+                  class="w-100 story d-flex justify-content-start align-items-center"
+                >
+                </div>
+                <div class="w-100 d-flex align-items-center">
+                  <img
+                    style="max-height: 2rem"
+                    src="__CDN__/assets/img/frontend/home/home page-down-箭頭@2x.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div> -->
+
+            
+          <!-- <div class="mt-5">
+            <div class="d-flex justify-content-end">
+              <div class="d-flex">
+                <p class="fs-3">請追蹤我們：</p>
+                <img
+                  class="w-25"
+                  src="__CDN__/assets/img/frontend/home/home page-follow us-箭頭-@2x.png"
+                  alt=""
+                />
+                <a
+                  href="https://www.facebook.com/fullmoonstrayanimalsanctuary"
+                  target="_blank"
+                  style="z-index: 10"
+                >
+                  <img
+                    class="w-50"
+                    src="__CDN__/assets/img/frontend/home/home page-icon-facebook@2x.png"
+                    alt=""
+                  />
+                </a>
+              </div>
+            </div>
+            <img
+              style="margin-top: -10%"
+              class="w-50"
+              src="__CDN__/assets/img/frontend/home/doggie_1.gif"
+              alt=""
+            />
+          </div> -->
+        </div>
+      </div>
+    </div>
+    {include file="common/script" /}
+    <script>
+      // 輪播圖
+      const bannerLists = [
+        {if $bannerList}
+        {foreach $bannerList as $banner}
+        "{$banner}",
+        {/foreach}
+        {/if}
+      ];
+      let bannerListDOM = '';
+      const swiperWrapper = document.querySelector(".swiper-wrapper");
+      bannerLists.forEach((bannerList, index) => {
+        bannerListDOM += `
+            <div class="swiper-slide">
+                <img src="__CDN__${bannerLists[index]}"/>
+            </div>
+            `;
+      });
+      swiperWrapper.insertAdjacentHTML("afterbegin", bannerListDOM);
+
+      // 輪播控制
+      const swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        loop: true,
+        effect: "fade",
+        // lidesPerView:'auto',
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        // navigation: {
+        //   nextEl: ".swiper-button-next",
+        //   prevEl: ".swiper-button-prev",
+        // },
+        // pagination: {
+        //   el: ".swiper-pagination",
+        //   clickable: true,
+        // },
+      });
+    </script>
+  </body>
+</html>
