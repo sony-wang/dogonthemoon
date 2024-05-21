@@ -17,14 +17,44 @@
       <div class="col-md-5 col-12 position-relative adopt_left_bg">
         <img style="top: 1rem;left: 25%; z-index: 99;" class="logo position-absolute d-none d-md-block" src="__CDN__/assets/img/frontend/home page-流浪動物照護協會@2x.png" alt="">
         <div class="m-md-5 p-md-5 contact_left">
-          <div class="d-flex ms-md-5 mt-md-4 ">
+          <!-- <div class="d-flex ms-md-5 mt-md-4 ">
             <p class="fs-2 mb-0 genSenRounded">月園狗團圓</p>
+          </div> -->
+          <!-- collapse -->
+          <p class="mb-0 genSenRounded">
+            <button class="btn btn-link fs-2 text-decoration-none text-dark collapsed_btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              月園狗團圓
+            </button>
+          </p>
+          <div class="collapse show" id="collapseExample">
+            <ol class="ms-md-5" style="color:#00000080">
+              {foreach $mPetAll as $v}
+              <li><a class="text-decoration-none text-dark" href="{$v->id}">{$v->name}</a></li>
+              {/foreach}
+            </ol>
           </div>
-          <ol class="ms-md-5" style="color:#00000080">
-            {foreach $mPetAll as $v}
-            <li><a class="text-decoration-none text-dark" href="{$v->id}">{$v->name}</a></li>
-            {/foreach}
-          </ol>
+          <!-- /collapse -->
+
+          <!-- components accordion -->
+          <!-- <div class="accordionX ms-md-5 mt-md-4" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <p class="fs-2 mb-0 genSenRounded">月園狗團圓</p>
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show bg-transparent" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body bg-transparent">
+                  <ol class="ms-md-5" style="color:#00000080">
+                    {foreach $mPetAll as $v}
+                    <li><a class="text-decoration-none text-dark" href="{$v->id}">{$v->name}</a></li>
+                    {/foreach}
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!-- /components accordion -->
         </div>
       </div>
       <div class="col-md-6 col-12">
@@ -34,7 +64,7 @@
               <h2>{$mPet->name}</h2>
             </div>
             <div class="col-md-10 col-12">
-              <img class="w-100 rounded-5" src="{$mPet->imgbase}" class="card-img-top" alt="...">
+              <img class="w-100 rounded-5" src="__CDN__{$mPet->imgbase}" class="card-img-top" alt="狗狗照片">
             </div>
           </div>
           <div class="pet_content">
@@ -93,4 +123,22 @@
     </div>
     {include file="common/script" /}
   </body>
+  <style>
+    .collapsed_btn::after {
+      flex-shrink: 0;
+      width: 1.25rem;
+      height: 1.25rem;
+      margin-left: auto;
+      content: "";
+      background: url('__CDN__/assets/img/frontend/arrow.png');
+      background-repeat: no-repeat;
+      background-size: 1.25rem;
+      transition: transform .2s ease-in-out;
+      display: inline-block;
+    }
+    .collapsed_btn:not(.collapsed)::after {
+      /* background: url('__CDN__/assets/img/frontend/arrow.png'); */
+      transform: rotate(-180deg);
+    }
+  </style>
 </html>
