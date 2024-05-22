@@ -18,8 +18,8 @@ class Donate extends Frontend
         if($mWebset){
             $donation_project = explode(",", $mWebset->val);
         }
-        Log::record($mWebset);
-        Log::record($donation_project[0]);
+        // Log::record($mWebset);
+        // Log::record($donation_project[0]);
 
         $DonetSerchCate = [
             '1' => __('DonetSerchCate 1'), 
@@ -165,6 +165,12 @@ class Donate extends Frontend
     }
     public function receipt()
     {
+        return $this->view->fetch();
+    }
+    public function credit()
+    {
+        $creditList = model('Credit')->where("status = 1")->select();
+        $this->view->assign('creditList', $creditList);
         return $this->view->fetch();
     }
 

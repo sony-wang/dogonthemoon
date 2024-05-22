@@ -4,7 +4,7 @@ return [
     'name' => '月園管理後台',
     'beian' => '',
     'cdnurl' => '',
-    'version' => '1.0.4',
+    'version' => '1.0.6',
     'timezone' => 'Asia/Shanghai',
     'forbiddenip' => '',
     'languages' => [
@@ -33,8 +33,8 @@ return [
     'mail_verify_type' => '2',
     'mail_from' => '10000@gmail.com',
     'url' => [
-        'furl' => 'https://dogonthemoon.org',
-        'burl' => 'https://dogonthemoon.org/NmVGobFish.php',
-        'api' => 'https://dogonthemoon.org/api',
+        'furl' => 'https://www.dogonthemoon.org',
+        'burl' => 'https://www.dogonthemoon.org/NmVGobFish.php',
+        'api' => 'https://www.dogonthemoon.org/api',
     ],
 ];

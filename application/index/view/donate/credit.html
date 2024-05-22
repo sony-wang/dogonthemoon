@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {include file="common/meta" /}
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.staticfile.org/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="genSenRounded bg_a">
+    <div class="row g-0">
+      <div class="col-md-1">{include file="common/nav" /}</div>
+      <div class="col-md-5 col-12 position-relative">
+        <img
+          style="top: 1rem; left: 25%; z-index: 99"
+          class="logo position-absolute d-none d-md-block"
+          src="__CDN__/assets/img/frontend/home page-流浪動物照護協會@2x.png"
+          alt=""
+        />
+        <div class="m-md-5 p-md-5">
+          <div class="d-flex ms-md-5 my-md-4">
+            <div class="story d-flex justify-content-start align-items-center">
+              <img
+                style="max-height: 3.5rem"
+                src="__CDN__/assets/img/frontend/donate/捐款頁-捐款icon-@2x.png"
+                alt=""
+              />
+            </div>
+            <div class="w-100 d-flex align-items-center">
+              <p class="fs-custom-01 mb-0 genSenRounded">捐款</p>
+            </div>
+          </div>
+          <div class="ms-md-5 my-md-4">
+            <p class="m-0">您的愛心，是流浪動物幸福的保障。</p>
+            <p class="fs-1 m-0">感謝您！</p>
+            <p class="m-0">讓我們攜手為他們帶來溫暖與關懷。</p>
+            <br />
+            <p class="m-0">請於右方填寫需查詢之捐款人明細</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-12">
+        <div class="container p-md-5">
+          <div class="d-flex mb-4">
+            <h2 class="me-3 position-relative">
+              捐款芳名錄<img
+                style="max-height: 1.5rem"
+                src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向下箭頭@2x.png"
+                alt=""
+              />
+              <img class="position-absolute" style="max-height: 1rem; top: 2.5rem;left: 0;" src="__CDN__/assets/img/frontend/donate/组 323.png" alt="">
+            </h2>
+            <a
+              class="text-decoration-none text-dark fs-3 ms-3"
+              href="#"
+              onclick="history.back()"
+            >
+              回上一頁
+              <img
+                style="max-height: 1.5rem"
+                src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-向上箭頭@2x.png"
+                alt=""
+              />
+            </a>
+          </div>
+          <!--  -->
+          <div class="d-md-block">
+            {foreach $creditList as $k => $item}
+            <ul>
+              <li>
+                <a href="{$item.link}" target="_blank" class="text-decoration-none text-dark">{$item.title}</a>
+              </li>
+            </ul>
+            {/foreach}
+          </div>
+          <!--  -->
+          <div class="container p-md-5 noDonateList">
+            <img
+              class="w-75"
+              src="__CDN__/assets/img/frontend/donate/捐款頁-紀錄查詢-deco-小狗.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    {include file="common/script" /}
+    <script>
+      const donetSerchCate = document.querySelectorAll(
+        'input[name="donetSerchCate"]'
+      );
+      const donetUsername = document.querySelector('input[name="username"]');
+      const accNo_wrap = document.querySelector("#accNo_wrap");
+      const cardNo_wrap = document.querySelector("#cardNo_wrap");
+      donetSerchCate.forEach((element, index) => {
+        // element.checked = index === 0 ? true : false;
+        // if (element.checked)
+        // donetUsername.placeholder = `請輸入${element.labels[0].innerHTML}`;
+
+        element.addEventListener("change", (e) => {
+          console.log(element.value);
+          console.log(accNo_wrap.classList);
+          console.log(cardNo_wrap.classList);
+          if (element.value === "1") {
+            cardNo_wrap.classList.remove("d-none");
+            accNo_wrap.classList.add("d-none");
+          } else {
+            accNo_wrap.classList.remove("d-none");
+            cardNo_wrap.classList.add("d-none");
+          }
+          // donetUsername.placeholder = `請輸入${e.target.labels[0].innerHTML}`;
+        });
+      });
+
+      //送出的Loading
+      // const submit = document.querySelector('#submit');
+      // submit.addEventListener('click',()=>{
+      //   submit.children[0].classList.remove('d-none')
+      // })
+    </script>
+  </body>
+</html>
