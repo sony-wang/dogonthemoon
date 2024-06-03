@@ -142,7 +142,7 @@
     </div>
     {include file="common/script" /}
     <script>
-      const donate_type_list = document.querySelectorAll('input[name="donate_type_list"]');
+      const donate_type_list = document.querySelectorAll('input[name="donate_type"]');
       const exec_times_wrap = document.querySelector('#exec_times_wrap');
       donate_type_list.forEach((element,index) => {
         element.checked = index === 0 ? true : false;
