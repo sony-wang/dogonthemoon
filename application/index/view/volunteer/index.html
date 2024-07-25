@@ -142,7 +142,7 @@
                   value=""
                 />
                 <label for="agree" class="control-label text-secondary"
-                  >我已詳細閱讀一日義工需知事項， 並且實際遵守園區規定。</label
+                  >我已詳細閱讀一日義工<a class="text-decoration-none" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">需知事項</a>， 並且實際遵守園區規定。</label
                 >
               </div>
             </div>
@@ -171,6 +171,38 @@
         </div>
       </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">一日義工需知事項</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>『台中林媽媽流浪狗之家體驗一日狗園打掃義工常見Q&A』
+            還在懷疑人生，休假沒地方去沒事情做嗎？俗話說助狗為快樂之本～快點跟三五好友相約一起來做有愛心和熱血的事情吧！做好環境清潔是狗園每天基本卻不能馬虎的工作，乾淨的環境可抑制病媒滋生，讓毛孩子們健康成長減少生病的機會！一日狗園打掃義工必需條件如下：需年滿20歲、自備交通工具(汽機車皆可)、不怕狗不怕髒，擁有極大的愛心、耐性和體力！園區每日只開放一組報名，每組上限最多六人！請先行向管理員詢問有無空擋時間， 不限平日假日，即可幫您報名預約！</p>
+            <p>一日義工主要工作內容有：</p>
+            <ol>
+              <li>園區環境維護(清掃狗狗排泄物)</li>
+              <li>刷洗狗狗們的水盆和飼料碗</li>
+              <li>協助照護員補水和餵食</li>
+              <li>水溝清潔</li>
+            </ol>
+            <p>因園區中大型犬隻居多加上打掃時需費力搬動大型棧板，建議穿著不怕髒的顏色、長袖長褲、防水布料、好清洗等衣物！避免短褲破褲以防熱情的孩子們在討抱抱時被抓傷！可自備雨鞋、口罩、手套和乾淨衣物替換～園區現場也有提供限量的愛心雨鞋方便義工們更換！園區日常打掃時間自下午13:00或14:00開始，耗時約2至3個鐘頭！更多細項會在您到來之後由照護員一一詳細示範！因園區位於王田交流道附近的租地自建，沒有門牌地址，管理員將會和大家在聯絡預約事項時說明集合地點和提供地圖！歡迎大家一起來熱血揮汗，一起用力愛毛孩吧！</p>
+            <p>園區不提供、不造假時數證明，不接受為補學分交差者敬請見諒🙏🏻</p>
+            <p>更多資訊請前往<a class="text-decoration-none" href="https://pse.is/68zkva" target="_blank">月園Facebook</a></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">我知道了</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <!-- <div id="toast-container" class="toast-top-center"><div class="toast toast-error" aria-live="assertive" style="display: block;"><button type="button" class="toast-close-button" role="button">×</button><div class="toast-message">[捐款金額]必須大於0</div></div></div> -->
     <!-- <div id="toast-container" class="toast-top-center"><div class="toast toast-success" aria-live="assertive" style="display: block;"><button type="button" class="toast-close-button" role="button">×</button><div class="toast-message">[捐款金額]必須大於0</div></div></div> -->
     {include file="common/script" /}

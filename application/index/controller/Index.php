@@ -14,21 +14,21 @@ class Index extends Frontend
 
     public function index()
     {
-        $currentURL = "http";
-        if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
-        $currentURL .= "s";
-        $currentURL .= "://";
-        $currentURL .= $_SERVER['HTTP_HOST'];
-        $currentURL .= $_SERVER['REQUEST_URI'];
-        $currentURL .= "index/index/underconstruction/";
+        // $currentURL = "http";
+        // if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+        // $currentURL .= "s";
+        // $currentURL .= "://";
+        // $currentURL .= $_SERVER['HTTP_HOST'];
+        // $currentURL .= $_SERVER['REQUEST_URI'];
+        // $currentURL .= "index/index/underconstruction/";
 
-        $key = request()->param('key', null, 'trim,strip_tags,htmlspecialchars');
-        Log::record($key);
-        if($key !== 'dog'){
-            header("Location:$currentURL");
-            // header("Location: https://google.com.tw");
-            die();
-        }
+        // $key = request()->param('key', null, 'trim,strip_tags,htmlspecialchars');
+        // Log::record($key);
+        // if($key !== 'dog'){
+        //     header("Location:$currentURL");
+        //     // header("Location: https://google.com.tw");
+        //     die();
+        // }
 
         $bannerList = [];
         $mWebset = model("Webset")->where("`key` = 'banner' ")->find();

@@ -26,6 +26,7 @@ class Donate extends Api
         $donate_name = $this->request->request('donate_name', '');
         $address = $this->request->request('address', '');
         $AccNo = $this->request->request('AccNo', '');
+        $memo = $this->request->request('memo', '');
 
 
         // Log::notice('donate_type:'. $donate_type);
@@ -76,6 +77,7 @@ class Donate extends Api
             'address' => $address,
             'donate_name' => $donate_name,
             'ATMAccNo' => $AccNo,
+            'memo' => $memo,
             'donation_project' => $donation_project,
             'receipt' => 0,
             'status' => 0,

@@ -44,6 +44,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'card4no', title: __('card4no'), operate: 'LIKE'},
                         {field: 'ATMAccNo', title: __('ATMAccNo'), operate: 'LIKE'},
                         {field: 'WebATMAccNo', title: __('WebATMAccNo'), operate: 'LIKE'},
+                        {field: 'memo', title: __('Memo'), operate: 'LIKE'},
                         {field: 'CheckMacValue', title: __('CheckMacValue'), operate: 'LIKE', operate: false, visible: false},
                         {field: 'result', title: __('result'), operate: 'LIKE', operate: false, visible: false},
                         {field: 'receipt', title: __('receipt'), formatter: Controller.api.formatter.receipt, searchList: {0: __('Receipt 0'), 1: __('Receipt 1')}},
