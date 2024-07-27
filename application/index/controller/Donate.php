@@ -161,6 +161,11 @@ class Donate extends Frontend
     }
     public function transfer()
     {
+        $mWebset = model('Webset')->where("`key` = 'donation_project' ")->find();
+        if($mWebset){
+            $donation_project = explode(",", $mWebset->val);
+        }
+        $this->view->assign('donation_project', $donation_project[0]);
         return $this->view->fetch();
     }
     public function receipt()
