@@ -23,10 +23,11 @@
           <!-- collapse -->
           <p class="mb-0 genSenRounded">
             <button class="btn btn-link fs-2 text-decoration-none text-dark collapsed_btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-              月園狗團圓
+              月園狗團圓 (<span class="btn" id="click_collapsed">點擊展開</span>)
             </button>
           </p>
-          <div class="collapse show" id="collapseExample">
+          <!-- <div class="collapse show" id="collapseExample"> -->
+          <div class="collapse" id="collapseExample">
             <ol class="ms-md-5" style="color:#00000080">
               {foreach $mPetAll as $v}
               <li><a class="text-decoration-none text-dark" href="{$v->id}">{$v->name}</a></li>
@@ -122,6 +123,20 @@
       </div>
     </div>
     {include file="common/script" /}
+
+    <script>
+      const collapsed_btn = document.querySelector('.collapsed_btn')
+      const click_collapsed = document.querySelector('#click_collapsed')
+      const collapse = document.querySelector('#collapseExample');
+      collapsed_btn.addEventListener('click', (i)=>{
+        console.log(collapsed_btn .classList.contains('collapsed'))
+        if (collapsed_btn .classList.contains('collapsed')) {
+          click_collapsed.innerHTML = '點擊展開'
+        } else {
+          click_collapsed.innerHTML = '點擊關閉'
+        }
+      })
+    </script>
   </body>
   <style>
     .collapsed_btn::after {

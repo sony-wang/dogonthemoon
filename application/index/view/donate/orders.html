@@ -227,6 +227,8 @@
       const donetUsername = document.querySelector('input[name="username"]');
       const accNo_wrap = document.querySelector("#accNo_wrap");
       const cardNo_wrap = document.querySelector("#cardNo_wrap");
+      const AccNo = document.querySelector("#AccNo");
+      const cardNo = document.querySelector("#cardNo");
       donetSerchCate.forEach((element, index) => {
         // element.checked = index === 0 ? true : false;
         // if (element.checked)
@@ -234,14 +236,18 @@
 
         element.addEventListener("change", (e) => {
           console.log(element.value);
-          console.log(accNo_wrap.classList);
-          console.log(cardNo_wrap.classList);
+          // console.log(accNo_wrap.classList);
+          // console.log(cardNo_wrap.classList);
+          // console.log(accNo_wrap);
+          // console.log(cardNo_wrap);
           if (element.value === "1") {
             cardNo_wrap.classList.remove("d-none");
             accNo_wrap.classList.add("d-none");
+            AccNo.value = '';
           } else {
             accNo_wrap.classList.remove("d-none");
             cardNo_wrap.classList.add("d-none");
+            cardNo.value = '';
           }
           // donetUsername.placeholder = `請輸入${e.target.labels[0].innerHTML}`;
         });
